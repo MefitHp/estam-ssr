@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+    title: "ESTAM",
+    description: "Energía Inteligente",
+  },
   plugins: [
     "gatsby-plugin-emotion",
     "gatsby-plugin-gatsby-cloud",
