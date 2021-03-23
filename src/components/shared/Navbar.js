@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import tw from "twin.macro";
 import { Link } from "gatsby";
+import WhiteLogo from "../../images/blanco.png";
 
 //Local Imports
 import Button from "./Button";
@@ -15,7 +16,7 @@ const HeaderContainer = styled.div`
   py-2
   items-center
   justify-between
-  md:px-20
+  lg:px-20
   `}
   color: black;
 `;
@@ -73,7 +74,7 @@ const Navbar = () => {
   return (
     <HeaderContainer>
       <Link to="/">
-        <Logo src="/static/blanco.png" />
+        <Logo src={WhiteLogo} alt="ESTAM LOGO" />
       </Link>
       <LinkList>
         {items.map(({ label, path }, index) => {
