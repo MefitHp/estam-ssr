@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
-import { Wrapper } from "../components";
+import { Wrapper } from "../components/shared";
 
 const HeaderBanner = styled.section`
   min-height: calc(85vh - 70px);
