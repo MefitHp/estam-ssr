@@ -7,10 +7,15 @@ const ButtonContainer = styled.button`
     rounded-lg
     px-3
     py-2
+    font-medium
     `}
   background-color: #009fe3;
   color: white;
+  &:hover {
+    background-color: #0084bd;
+  }
 `;
+
 const Button = ({ children, ...rest }) => {
   return <ButtonContainer {...rest}>{children}</ButtonContainer>;
 };
