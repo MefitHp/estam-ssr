@@ -3,8 +3,79 @@ import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import tw from "twin.macro";
+import WhiteLogo from "../images/blanco.png";
 
 import { Button, Wrapper } from "../components/shared";
+
+const Footer = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 10vh;
+  padding: 30px;
+`;
+
+const VideoSection = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 100vh;
+  padding: 30px;
+  background-color: black;
+  .video {
+    width: 40%;
+    height: 50%;
+    background-color: #fff;
+  }
+  .cuadro {
+    width: 30%;
+    height: 40%;
+    background-color: #009fe3;
+    margin-left: -5%;
+  }
+`;
+
+const CardsSection = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 50vh;
+  padding: 30px;
+`;
+
+const Card = styled.div`
+  width: 200px;
+  height: 300px;
+  padding: 10px;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  .card {
+    margin-bottom: 10px;
+  }
+  .card-logo {
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 100%;
+    }
+  }
+  .card-title {
+    height: 20%;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .card-text {
+    height: 40%;
+    font-size: 0.8rem;
+  }
+`;
 
 const HeaderBanner = styled.section`
   min-height: calc(85vh - 70px);
@@ -184,6 +255,28 @@ const IndexPage = () => {
         </article>
         {/* </Wrapper> */}
       </BlogHighlightsBox>
+      <CardsSection>
+        {[1, 2, 3, 4].map((item, key) => (
+          <Card key={key}>
+            <div className="card card-logo">
+              <img src={WhiteLogo} />
+            </div>
+            <div className="card card-title">
+              <h4>El título de la Card</h4>
+            </div>
+            <div className="card card-text">
+              El abuso al consumo de este producto es nocivo para la salud
+            </div>
+          </Card>
+        ))}
+      </CardsSection>
+      <VideoSection>
+        <div className="video">Video</div>
+        <div className="cuadro">
+          El abuso al consumo de este producto es nocivo para la salud
+        </div>
+      </VideoSection>
+      <Footer>Footer</Footer>
     </>
   );
 };
