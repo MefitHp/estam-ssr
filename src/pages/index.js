@@ -40,9 +40,14 @@ const BlogHighlightsBox = styled.section`
   background-color: black;
   min-height: 50vh;
   article {
-    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
     .blog {
       display: flex;
       justify-content: center;
@@ -61,6 +66,9 @@ const BlogHighlightsBox = styled.section`
       button {
         font-size: 24px;
         padding: 12px 24px;
+      }
+      .container {
+        padding: 16px;
       }
     }
     .right {
@@ -144,7 +152,7 @@ const IndexPage = () => {
         {/* <Wrapper> */}
         <article>
           <div className="blog left">
-            <div>
+            <div className="container">
               <h2>
                 Mantente informado <br /> sobre el sector <br /> energético...
               </h2>
