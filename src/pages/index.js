@@ -6,6 +6,7 @@ import tw from "twin.macro";
 import WhiteLogo from "../images/blanco.png";
 
 import { Button, Wrapper } from "../components/shared";
+import { ReadMore } from "../components/Home";
 
 const Footer = styled.section`
   width: 100%;
@@ -227,6 +228,7 @@ const IndexPage = () => {
         </BackgroundImageFluid>
       </HeaderBanner>
       {/* Primera sección */}
+      <ReadMore />
       <BlogHighlightsBox>
         <Wrapper>
           <article>
