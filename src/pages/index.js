@@ -6,7 +6,7 @@ import tw from "twin.macro";
 import WhiteLogo from "../images/blanco.png";
 
 import { Button, Wrapper } from "../components/shared";
-import { ReadMore } from "../components/Home";
+import { ReadMore, InfoCards } from "../components/Home";
 
 const Footer = styled.section`
   width: 100%;
@@ -37,44 +37,6 @@ const VideoSection = styled.section`
     height: 40%;
     background-color: #009fe3;
     margin-left: -5%;
-  }
-`;
-
-const CardsSection = styled.section`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  height: 50vh;
-  padding: 30px;
-`;
-
-const Card = styled.div`
-  width: 200px;
-  height: 300px;
-  padding: 10px;
-  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  .card {
-    margin-bottom: 10px;
-  }
-  .card-logo {
-    height: 30%;
-    display: flex;
-    justify-content: center;
-    img {
-      height: 100%;
-    }
-  }
-  .card-title {
-    height: 20%;
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  .card-text {
-    height: 40%;
-    font-size: 0.8rem;
   }
 `;
 
@@ -265,21 +227,7 @@ const IndexPage = () => {
           </article>
         </Wrapper>
       </BlogHighlightsBox>
-      <CardsSection>
-        {[1, 2, 3, 4].map((item, key) => (
-          <Card key={key}>
-            <div className="card card-logo">
-              <img src={WhiteLogo} />
-            </div>
-            <div className="card card-title">
-              <h4>El título de la Card</h4>
-            </div>
-            <div className="card card-text">
-              El abuso al consumo de este producto es nocivo para la salud
-            </div>
-          </Card>
-        ))}
-      </CardsSection>
+      <InfoCards />
       <VideoSection>
         <div className="video">Video</div>
         <div className="cuadro">
