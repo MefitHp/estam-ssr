@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/estam-ssr",
   siteMetadata: {
     title: "ESTAM",
     description: "Energía Inteligente",
