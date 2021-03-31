@@ -85,7 +85,7 @@ const HeaderBanner = styled.section`
 const BannerTitleContainer = styled.div`
   width: 100%;
   height: 100%;
-  min-height: calc(85vh - 70px);
+  min-height: calc(100vh - 70px);
   display: flex;
   align-items: flex-end;
 `;
@@ -95,7 +95,7 @@ const BannerTitle = styled.h1`
   font-weight: light;
   padding: 15% 8px;
   span {
-    font-size: 64px;
+    font-size: calc(2.5em + 1vw);
     line-height: 1;
   }
 `;
@@ -116,9 +116,10 @@ const BlogHighlightsBox = styled.section`
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       grid-template-columns: 1fr;
     }
+
     .blog {
       display: flex;
       justify-content: center;
@@ -129,13 +130,16 @@ const BlogHighlightsBox = styled.section`
     }
     .left {
       h2 {
-        font-size: 54px;
+        font-size: calc(2.5em + 1vw);
         line-height: 1;
         font-weight: lighter;
         margin-bottom: 32px;
+        @media (max-width: 700px) {
+          font-size: 42px;
+        }
       }
       button {
-        font-size: 24px;
+        font-size: calc(0.25em + 1vw);
         padding: 12px 24px;
       }
       .container {
@@ -143,9 +147,12 @@ const BlogHighlightsBox = styled.section`
       }
     }
     .right {
-      flex-direction: row;
-      gap: 30px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+      }
     }
     .blog-card {
       height: 500px;
@@ -162,7 +169,6 @@ const BlogHighlightsBox = styled.section`
       }
       .image {
         height: 100%;
-        width: 300px;
         background-image: url("https://elceo.com/wp-content/uploads/2020/06/empresas_slim_reuters.jpg");
         background-size: cover;
         background-position: center;
@@ -205,6 +211,7 @@ const BackgroundImageFluid = ({ className, children }) => {
 const IndexPage = () => {
   return (
     <>
+      {/* Header */}
       <HeaderBanner>
         <BackgroundImageFluid>
           <Wrapper>
@@ -219,41 +226,42 @@ const IndexPage = () => {
           </Wrapper>
         </BackgroundImageFluid>
       </HeaderBanner>
+      {/* Primera sección */}
       <BlogHighlightsBox>
-        {/* <Wrapper> */}
-        <article>
-          <div className="blog left">
-            <div className="container">
-              <h2>
-                Mantente informado <br /> sobre el sector <br /> energético...
-              </h2>
-              <Button>Leer más</Button>
+        <Wrapper>
+          <article>
+            <div className="blog left">
+              <div className="container">
+                <h2>
+                  Mantente informado <br /> sobre el sector <br /> energético...
+                </h2>
+                <Button>Leer más</Button>
+              </div>
             </div>
-          </div>
-          <div className="blog right">
-            <div className="blog-card">
-              <div className="overlay">
-                <p>
-                  {`5 CAMBIOS DE
+            <div className="blog right">
+              <div className="blog-card">
+                <div className="overlay">
+                  <p>
+                    {`5 CAMBIOS DE
                     LA REFORMA A LA LEY
                     DE INDUSTRIA ELÉCTRICA`}
-                </p>
+                  </p>
+                </div>
+                <div className="image"></div>
               </div>
-              <div className="image"></div>
-            </div>
-            <div className="blog-card">
-              <div className="overlay">
-                <p>
-                  {`5 CAMBIOS DE
+              <div className="blog-card">
+                <div className="overlay">
+                  <p>
+                    {`5 CAMBIOS DE
                     LA REFORMA A LA LEY
                     DE INDUSTRIA ELÉCTRICA`}
-                </p>
+                  </p>
+                </div>
+                <div className="image"></div>
               </div>
-              <div className="image"></div>
             </div>
-          </div>
-        </article>
-        {/* </Wrapper> */}
+          </article>
+        </Wrapper>
       </BlogHighlightsBox>
       <CardsSection>
         {[1, 2, 3, 4].map((item, key) => (
