@@ -7,6 +7,7 @@ import WhiteLogo from "../images/blanco.png";
 
 import { Button, Wrapper } from "../components/shared";
 import { ReadMore, InfoCards } from "../components/Home";
+import AboutYou from "../components/Home/AboutYou";
 
 const Footer = styled.section`
   width: 100%;
@@ -60,6 +61,9 @@ const BannerTitle = styled.h1`
   span {
     font-size: calc(2.5em + 1vw);
     line-height: 1;
+    b {
+      font-family: "Oswald Bold";
+    }
   }
 `;
 // markup
@@ -189,6 +193,8 @@ const IndexPage = () => {
           </Wrapper>
         </BackgroundImageFluid>
       </HeaderBanner>
+      {/* Formulario acerca de ti */}
+      <AboutYou />
       {/* Primera sección */}
       <ReadMore />
       <BlogHighlightsBox>

@@ -19,6 +19,11 @@ const HeaderContainer = styled.div`
   lg:px-20
   `}
   color: black;
+  .contact-button {
+    width: 130px;
+    align-items: center;
+    display: flex;
+  }
 `;
 
 const Logo = styled.img`
@@ -28,11 +33,16 @@ const Logo = styled.img`
 `;
 
 const LinkList = styled.ul`
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   list-style-type: none;
+  li:last-child {
+    justify-self: flex-end;
+  }
 `;
 
 const ListItem = styled.li``;
@@ -53,20 +63,12 @@ const items = [
     path: "/noticias",
   },
   {
-    label: "Generación / Almacenamiento",
-    path: "/generacion-almacenamiento",
+    label: "Administración de Energía",
+    path: "/administracion-energia",
   },
   {
-    label: "SGEn",
-    path: "/sgen",
-  },
-  {
-    label: "Eficiencia Energética",
-    path: "/eficiencia-energetica",
-  },
-  {
-    label: "MEM",
-    path: "/mem",
+    label: "Nosotros",
+    path: "/nosotros",
   },
 ];
 
@@ -86,10 +88,12 @@ const Navbar = () => {
             </ListItem>
           );
         })}
-        <ListItem>
-          <Button>Contacto</Button>
-        </ListItem>
       </LinkList>
+      <ListItem className="contact-button">
+        <Button>
+          Contacto <span style={{ fontSize: 12, paddingLeft: 6 }}> ▶</span>
+        </Button>
+      </ListItem>
     </HeaderContainer>
   );
 };

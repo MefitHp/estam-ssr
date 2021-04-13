@@ -4,9 +4,8 @@ import tw from "twin.macro";
 
 const ButtonContainer = styled.button`
   ${tw`
-    rounded-lg
-    px-3
-    py-2
+    px-4
+    py-1
     font-medium
     `}
   background-color: #009fe3;
