@@ -13,6 +13,9 @@ const AboutYouContainer = styled.section`
     font-size: calc(3.5em + 1vw);
     line-height: 1;
     font-weight: bold;
+    @media (max-width: 700px) {
+      font-size: 42px;
+    }
   }
 
   form {
