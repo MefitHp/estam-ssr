@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import tw from "twin.macro";
-import WhiteLogo from "../images/blanco.png";
 
 import { Button, Wrapper } from "../components/shared";
 import { ReadMore, InfoCards } from "../components/Home";

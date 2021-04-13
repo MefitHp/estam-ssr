@@ -1,3 +1,5 @@
+const path = require(`path`);
+
 module.exports = {
   pathPrefix: "/estam-ssr",
   siteMetadata: {
@@ -21,7 +23,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: path.join(__dirname, `src`, `images`),
       },
       __key: "images",
     },
