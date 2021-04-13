@@ -5,11 +5,11 @@ import { Wrapper } from "../shared";
 const AboutYouContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
-
+  padding: 4rem;
+  gap: 16px;
   h2 {
     font-family: "Oswald";
     color: var(--blue);
-    padding: 15% 8px;
     font-size: calc(3.5em + 1vw);
     line-height: 1;
     font-weight: bold;
@@ -30,7 +30,6 @@ const AboutYouContainer = styled.section`
     .send {
       grid-area: send;
       color: var(--blue);
-      text-align: left;
     }
     gap: 8px;
     grid-template-areas:
@@ -42,6 +41,11 @@ const AboutYouContainer = styled.section`
       border: 1px solid rgba(0, 0, 0, 0.33);
       padding: 6px;
     }
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    padding: 2rem;
   }
 `;
 
