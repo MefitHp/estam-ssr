@@ -5,7 +5,7 @@ import BackgroundImage from "gatsby-background-image";
 import tw from "twin.macro";
 
 import { Button, Wrapper } from "../components/shared";
-import { ReadMore, InfoCards } from "../components/Home";
+import { ReadMore, InfoCards, HowItWorks, Projects } from "../components/Home";
 import AboutYou from "../components/Home/AboutYou";
 
 const Footer = styled.section`
@@ -233,6 +233,8 @@ const IndexPage = () => {
         </Wrapper>
       </BlogHighlightsBox>
       <InfoCards />
+      <HowItWorks />
+      <Projects />
       <VideoSection>
         <div className="video">Video</div>
         <div className="cuadro">
