@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Wrapper } from "../shared";
-const image1 = "/static/PORQUE.png";
-const image2 = "/static/COMOFUNCIONAMOS.png";
+import WhyImage from "../../images/energy_generator.png";
+import HowImage from "../../images/solar_panel.png";
 
 const HowItWorks = () => {
   return (
@@ -21,10 +21,10 @@ const HowItWorks = () => {
               lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
             </p>
           </Text>
-          <Image src={image1} />
+          <Image src={WhyImage} />
         </Container>
         <Container>
-          <Image2 src={image2} />
+          <Image2 src={HowImage} />
           <Text>
             <h2>Cómo funcionamos?</h2>
             <p>
@@ -73,7 +73,8 @@ const Section = styled.section`
 const Container = styled.section`
   width: 100%;
   display: flex;
-  justify-contente: space-around;
+  justify-content: space-around;
+  .
 `;
 
 export default HowItWorks;

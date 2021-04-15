@@ -148,7 +148,7 @@ const BackgroundImageFluid = ({ className, children }) => {
   const data = useStaticQuery(
     graphql`
       query {
-        banner: file(relativePath: { eq: "main_banner.jpeg" }) {
+        banner: file(relativePath: { eq: "banner.png" }) {
           childImageSharp {
             fluid(maxWidth: 1200, quality: 90) {
               ...GatsbyImageSharpFluid
