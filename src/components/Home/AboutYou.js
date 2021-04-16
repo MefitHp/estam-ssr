@@ -41,7 +41,6 @@ const AboutYouContainer = styled.section`
     input,
     textarea {
       border-radius: 4px;
-      /* border: 1px solid rgba(0, 0, 0, 0.33); */
       padding: 10px;
       background-color: #f4f4f4;
       outline-color: var(--blue);
@@ -49,6 +48,11 @@ const AboutYouContainer = styled.section`
         color: black;
         opacity: 1;
       }
+    }
+    @media (max-width: 700px) {
+      display: flex;
+      gap: 6px;
+      flex-direction: column;
     }
   }
 

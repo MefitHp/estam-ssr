@@ -2,12 +2,12 @@ import React from "react";
 import styled from "@emotion/styled";
 import tw from "twin.macro";
 import { Link } from "gatsby";
-import WhiteLogo from "../../images/blanco.png";
+import WhiteLogo from "../../images/white_logo.png";
 
 //Local Imports
 import Button from "./Button";
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.nav`
   ${tw`
   flex
   bg-black
@@ -23,13 +23,19 @@ const HeaderContainer = styled.div`
     width: 130px;
     align-items: center;
     display: flex;
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
 `;
 
 const Logo = styled.img`
   height: 64px;
   width: 120px;
-  object-fit: cover;
+  object-fit: contain;
+  @media (max-width: 700px) {
+    width: 40%;
+  }
 `;
 
 const LinkList = styled.ul`
@@ -42,6 +48,10 @@ const LinkList = styled.ul`
   list-style-type: none;
   li:last-child {
     justify-self: flex-end;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
   }
 `;
 
