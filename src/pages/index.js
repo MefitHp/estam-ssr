@@ -120,7 +120,7 @@ const IndexPage = () => {
       <ReadMore />
 
       <InfoCards />
-      {/* <HowItWorks /> */}
+      <HowItWorks />
       <Projects />
       <VideoSection>
         <div className="video">Video</div>

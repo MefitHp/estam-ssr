@@ -9,31 +9,43 @@ const HowItWorks = () => {
   return (
     <Section>
       <Wrapper>
-        <Container>
+        <Container isFirst>
+          <Image src={WhyImage} isFirst />
           <Text>
             <h2>Por qué?</h2>
             <p>
-              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+              El precio de la electricidad sigue incrementando, los consumidores
+              tienen problemas al entenderse con las empresas suministradoras y
+              la factura de consumo energético resulta compleja de entender.
             </p>
             <p>
-              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+              Como resultado de la reforma energética, aumentó la complejidad de
+              los sistemas de producción de energía. La gestión adecuada de los
+              activos y los contratos energéticos de corto y largo plazo
+              permiten aprovechar nuevas oportunidades, reduciendo el riesgo
+              negativo sobre la competitividad del consumidor industrial.
             </p>
           </Text>
-          <Image src={WhyImage} />
         </Container>
         <Container>
           <Image2 src={HowImage} />
           <Text>
             <h2>Cómo funcionamos?</h2>
             <p>
-              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+              En ESTAM contamos con un equipo especializado en la industria
+              energética, analizamos sus prácticas actuales de suministro y
+              gestión de energía, incluida la forma en la que se produce y
+              almacena, como resultado ofrecemos a nuestros clientes generar
+              ahorros monetarios.
             </p>
             <p>
-              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+              En ESTAM utilizamos aplicaciones avanzadas de administración
+              energética, algoritmos complejos y sensores inalámbricos de
+              Internet de las cosas (IoT) conectados a su equipo crítico. Esto
+              nos permite recopilar información en tiempo real a nivel granular
+              para evaluar su programa actual de suministro de energía y
+              encontrar alternativas para adquirir, producir y almacenar la
+              energía que utiliza.
             </p>
           </Text>
         </Container>
@@ -42,19 +54,19 @@ const HowItWorks = () => {
   );
 };
 
-const Image = styled.img`
-  width: 500px;
-  height: 220px;
-  margin-top: -80px;
-  margin-right: 70px;
+const BaseImage = styled.img`
+  width: 550px;
+  height: 300px;
+  @media (max-width: 700px) {
+    height: 200px;
+  }
 `;
 
-const Image2 = styled.img`
-  width: 500px;
-  height: 220px;
-  margin-top: -10px;
-  margin-left: 70px;
+const Image = styled(BaseImage)`
+  margin-top: -20px;
 `;
+
+const Image2 = styled(BaseImage)``;
 
 const Text = styled.div`
   padding: 1em 2em;
@@ -62,10 +74,16 @@ const Text = styled.div`
   & h2 {
     font-size: 2rem;
   }
+  & p {
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const Section = styled.section`
-  padding: 2em;
   background: #000;
   color: #fff;
 `;
@@ -73,8 +91,12 @@ const Section = styled.section`
 const Container = styled.section`
   width: 100%;
   display: flex;
+  flex-direction: ${({ isFirst }) => (isFirst ? "row-reverse" : "row")};
   justify-content: space-around;
-  .
+  align-items: center;
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export default HowItWorks;
