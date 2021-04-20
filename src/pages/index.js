@@ -126,7 +126,7 @@ const IndexPage = () => {
       <ReadMore />
 
       <InfoCards />
-      {/* <HowItWorks /> */}
+      <HowItWorks />
       <Projects />
       <BackgroundImageFluid>
         <Importance />
