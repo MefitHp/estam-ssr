@@ -9,12 +9,33 @@ const Projects = () => {
   return (
     <Section>
       <Wrapper>
+        <Title>Proyectos</Title>
         <Container>
-          <div className="one"></div>
-          <div className="two"></div>
-          <div className="three"></div>
-          <div className="four"></div>
-          <div className="five"></div>
+          <div className="column one">
+            <Text>Generación y Almacenamiento</Text>
+            <div>
+              <Image src={image1} alt={"title"} />
+            </div>
+          </div>
+          <div className="column two">
+            <Text>Generación y Almacenamiento</Text>
+            <div>
+              <Image src={image1} alt={"title"} />
+            </div>
+            <div className="flex-images">
+              <Image src={image1} alt={"title"} />
+              <Image src={image1} alt={"title"} />
+            </div>
+          </div>
+          <div className="column three">
+            <Text>Generación y Almacenamiento</Text>
+            <div>
+              <Image src={image1} alt={"title"} />
+            </div>
+            <div>
+              <Image src={image1} alt={"title"} />
+            </div>
+          </div>
         </Container>
       </Wrapper>
     </Section>
@@ -22,25 +43,16 @@ const Projects = () => {
 };
 
 const Image = styled.img`
-  width: 500px;
-  height: 220px;
-  margin-top: -80px;
-  margin-right: 70px;
+  height: 100%;
+  width: 100%;
 `;
 
-const Image2 = styled.img`
-  width: 500px;
-  height: 220px;
-  margin-top: -10px;
-  margin-left: 70px;
+const Text = styled.h3`
+  font-size: 1rem;
 `;
 
-const Text = styled.div`
-  padding: 1em 2em;
-  width: 60%;
-  & h2 {
-    font-size: 2rem;
-  }
+const Title = styled.h2`
+  font-size: 2rem;
 `;
 
 const Section = styled.section`
@@ -50,58 +62,30 @@ const Section = styled.section`
 `;
 
 const Container = styled.section`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  & div {
-    background: red;
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  & .column {
+    width: 30%;
+    & .flex-images {
+      display: flex;
+      & img {
+        width: 50%;
+      }
+    }
   }
-  & .one {
-    grid-column: 1;
-    grid-row: 1 / 3;
-  }
-  .two {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .three {
-    grid-column: 3;
-    grid-row: 1;
-  }
-  .four {
-    grid-column: 3;
-    grid-row: 2;
-  }
-  .five {
-    grid-column: 2;
-    grid-row: 2;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    & .column {
+      width: 100%;
+      & .flex-images {
+        display: block;
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 `;
-
-// .one {
-//   grid-column: 1 / 3;
-//   grid-row: 1;
-// }
-// .two {
-//   grid-column: 2 / 4;
-//   grid-row: 1 / 3;
-// }
-// .three {
-//   grid-column: 1;
-//   grid-row: 2 / 5;
-// }
-// .four {
-//   grid-column: 3;
-//   grid-row: 3;
-// }
-// .five {
-//   grid-column: 2;
-//   grid-row: 4;
-// }
-// .six {
-//   grid-column: 3;
-//   grid-row: 4;
-// }
 
 export default Projects;
