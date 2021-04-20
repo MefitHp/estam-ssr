@@ -4,7 +4,13 @@ import { graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
 import { Button, Wrapper } from "../components/shared";
-import { ReadMore, InfoCards, HowItWorks, Projects } from "../components/Home";
+import {
+  ReadMore,
+  InfoCards,
+  HowItWorks,
+  Projects,
+  Importance,
+} from "../components/Home";
 import AboutYou from "../components/Home/AboutYou";
 
 const Footer = styled.section`
@@ -57,7 +63,7 @@ const BannerTitle = styled.h1`
   font-weight: light;
   padding: 15% 8px;
   span {
-    font-size: calc(2.5em + 1vw);
+    font-size: calc(3.5em + 1vw);
     line-height: 1;
     b {
       font-family: "Oswald Bold";
@@ -100,7 +106,7 @@ const IndexPage = () => {
   return (
     <>
       {/* Header */}
-      <HeaderBanner>
+      <HeaderBanner id="#">
         <BackgroundImageFluid>
           <Wrapper>
             <BannerTitleContainer>
@@ -122,13 +128,10 @@ const IndexPage = () => {
       <InfoCards />
       <HowItWorks />
       <Projects />
-      <VideoSection>
-        <div className="video">Video</div>
-        <div className="cuadro">
-          El abuso al consumo de este producto es nocivo para la salud
-        </div>
-      </VideoSection>
-      <Footer>Footer</Footer>
+      <BackgroundImageFluid>
+        <Importance />
+        <Footer>Footer</Footer>
+      </BackgroundImageFluid>
     </>
   );
 };
