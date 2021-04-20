@@ -73,7 +73,7 @@ const ReadMoreContainer = styled.section`
     right: 0;
   }
   h2 {
-    font-size: calc(1.2em + 1vw);
+    font-size: calc(1.7em + 1vw);
     line-height: 1;
     font-weight: lighter;
     margin-bottom: 32px;

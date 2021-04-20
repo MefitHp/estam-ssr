@@ -10,7 +10,7 @@ const AboutYouContainer = styled.section`
   h2 {
     font-family: "Oswald";
     color: var(--blue);
-    font-size: calc(3.5em + 1vw);
+    font-size: calc(2.5em + 1vw);
     line-height: 1;
     font-weight: bold;
     @media (max-width: 700px) {

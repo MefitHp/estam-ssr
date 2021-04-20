@@ -30,9 +30,12 @@ const globalStyles = `
 
   body {
     font-family: "Oswald", "Oswald Bold", georgia, serif;
+    overflow-y: scroll;
   }
   
-
+  html {
+    scroll-behavior: smooth;
+  }
   :root {
     --blue: #009FE3;
   }

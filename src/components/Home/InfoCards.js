@@ -39,7 +39,7 @@ const cards = [
 
 const InfoCards = () => {
   return (
-    <CardsSection>
+    <CardsSection id="GESTION-DE-ENERGIA">
       <Wrapper>
         <CardsContainer>
           {cards.map(({ logo, title, description }, key) => (
@@ -61,13 +61,13 @@ const InfoCards = () => {
 
 const CardsSection = styled.section`
   background-color: #fff;
-  padding: 2em;
+  padding: 6em 2em;
 `;
 
 const CardsContainer = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
 `;
 
 const Card = styled.div`
@@ -75,9 +75,14 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   padding: 16px;
-  gap: 8px;
+  gap: 12px;
   border-radius: 14px;
   height: 100%;
+  transition: all 0.2s ease-out;
+  &:hover {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transform: scale(1.04);
+  }
   .flex-alignment {
     display: flex;
     align-items: center;
@@ -86,8 +91,8 @@ const Card = styled.div`
   .card-logo {
     height: 100px;
     img {
-      height: 70px;
-      width: 70px;
+      height: 80px;
+      width: 80px;
     }
     .logo {
       width: 50px;
@@ -110,6 +115,7 @@ const Card = styled.div`
     height: 40%;
     font-size: 0.8rem;
     align-items: flex-start;
+    text-align: center;
   }
 `;
 

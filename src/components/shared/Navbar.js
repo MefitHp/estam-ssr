@@ -14,7 +14,7 @@ const items = [
   },
   {
     label: "Administración de Energía",
-    path: "/administracion-energia",
+    path: "#GESTION-DE-ENERGIA",
   },
   {
     label: "Nosotros",
@@ -33,11 +33,11 @@ const Navbar = () => {
       <LinkList>
         {items.map(({ label, path }, index) => {
           return (
-            <ListItem key={index}>
+            <li key={index}>
               <MenuLink key={index} to={path}>
                 {label}
               </MenuLink>
-            </ListItem>
+            </li>
           );
         })}
       </LinkList>
@@ -91,13 +91,13 @@ const ResponsiveLinkList = styled.div`
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  height: ${({ isOpen }) => (isOpen ? "100%" : "0px")};
+  max-height: ${({ isOpen }) => (isOpen ? "500px" : "0px")};
   position: absolute;
   top: 80px;
   z-index: 100;
   left: 0;
   right: 0;
-  transition: height 200ms ease-out;
+  transition: max-height 200ms ease-in-out;
 
   display: none;
   @media (max-width: 700px) {
@@ -119,7 +119,8 @@ const HeaderContainer = styled.nav`
   position: relative;
   color: black;
   .contact-button {
-    width: 130px;
+    width: 150px;
+    font-size: 16px;
     align-items: center;
     display: flex;
     @media (max-width: 700px) {
@@ -154,7 +155,17 @@ const LinkList = styled.ul`
   }
 `;
 
-const ListItem = styled.li``;
+const ListItem = styled.li`
+  font-size: 24px;
+  width: 100%;
+  display: block;
+  padding: 2px 0px;
+  a {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+`;
 
 const MenuLink = styled(Link)`
   padding: 8px 16px;
