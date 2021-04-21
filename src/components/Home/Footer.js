@@ -2,11 +2,11 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Wrapper } from "../shared";
 
-import location from "../../images/icons/address.png";
-import email from "../../images/icons/email.png";
-import whatsapp from "../../images/icons/whatsapp.png";
-import linkedin from "../../images/icons/linkedin.png";
-import facebook from "../../images/icons/facebook.png";
+import location from "../../images/footer_icons/address.png";
+import email from "../../images/footer_icons/email.png";
+import whatsapp from "../../images/footer_icons/whatsapp.png";
+import linkedin from "../../images/footer_icons/linkedin.png";
+import facebook from "../../images/footer_icons/facebook.png";
 
 const FooterContainer = styled.section`
   display: grid;
