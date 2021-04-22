@@ -9,8 +9,8 @@ const WrapperContainer = styled.div`
   width: 100%;
 `;
 
-const Wrapper = ({ children, styles }) => {
-  return <WrapperContainer styles={styles}>{children}</WrapperContainer>;
+const Wrapper = ({ children, style }) => {
+  return <WrapperContainer style={style}>{children}</WrapperContainer>;
 };
 
 export default Wrapper;

@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
-import { Button, Wrapper } from "../components/shared";
+import { Wrapper } from "../components/shared";
 import {
   ReadMore,
   InfoCards,
@@ -12,16 +12,7 @@ import {
   Importance,
 } from "../components/Home";
 import AboutYou from "../components/Home/AboutYou";
-
-const Footer = styled.section`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  height: 10vh;
-  padding: 30px;
-`;
+import Footer from "../components/Home/Footer";
 
 const VideoSection = styled.section`
   width: 100%;
@@ -130,7 +121,8 @@ const IndexPage = () => {
       <Projects />
       <BackgroundImageFluid>
         <Importance />
-        <Footer>Footer</Footer>
+        <Footer />
+        <div style={{ padding: "2rem" }} />
       </BackgroundImageFluid>
     </>
   );

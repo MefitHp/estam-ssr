@@ -36,7 +36,7 @@ const ReadMore = () => {
       <Wrapper>
         <FullWidthContainer
           style={{
-            height: "100vh",
+            height: "70vh",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -58,10 +58,10 @@ const ReadMore = () => {
 
 const ReadMoreContainer = styled.section`
   background-color: black;
-  height: 100vh;
+  height: 70vh;
   .fluid-background {
     width: 100%;
-    height: 65vh;
+    height: 50vh;
     position: relative;
   }
   .text {

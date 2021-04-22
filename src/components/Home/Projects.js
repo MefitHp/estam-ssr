@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
+import image from "../../images/PROYECTO1.png";
 import { Wrapper } from "../shared";
 import image1 from "../../images/energy_generator.png";
 

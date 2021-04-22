@@ -18,7 +18,7 @@ const items = [
   },
   {
     label: "Nosotros",
-    path: "/nosotros",
+    path: "#NOSOTROS",
   },
 ];
 
@@ -42,9 +42,10 @@ const Navbar = () => {
         })}
       </LinkList>
       <ListItem className="contact-button">
-        <Button>
-          Contacto <span style={{ fontSize: 12, paddingLeft: 6 }}> ▶</span>
-        </Button>
+        <ContactMenuLink to="#CONTACTO">
+          Contacto
+          <span style={{ fontSize: 12, paddingLeft: 6 }}> ▶</span>
+        </ContactMenuLink>
       </ListItem>
       {/* Hidden in mobile */}
       {/* Shown in mobile */}
@@ -174,6 +175,15 @@ const MenuLink = styled(Link)`
   transition: all 0.3s ease-in-out 0s;
   &:hover {
     border-color: white;
+  }
+`;
+
+const ContactMenuLink = styled(Link)`
+  padding: 0.5rem 1rem;
+  background-color: var(--blue);
+  color: white;
+  &:hover {
+    background-color: #0084bd;
   }
 `;
 export default Navbar;

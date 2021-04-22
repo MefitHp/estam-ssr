@@ -7,7 +7,7 @@ import HowImage from "../../images/solar_panel.png";
 
 const HowItWorks = () => {
   return (
-    <Section>
+    <Section id="NOSOTROS">
       <Wrapper>
         <Container isFirst>
           <Image src={WhyImage} isFirst />
