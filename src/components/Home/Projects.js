@@ -2,8 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Wrapper } from "../shared";
-const image1 = "/static/PORQUE.png";
-const image2 = "/static/COMOFUNCIONAMOS.png";
+import image1 from "../../images/energy_generator.png";
 
 const Projects = () => {
   return (
@@ -13,34 +12,43 @@ const Projects = () => {
         <Container>
           <div className="column one">
             <Text>Generación y Almacenamiento</Text>
-            <div>
+            <ImageContainer>
               <Image src={image1} alt={"title"} />
-            </div>
+            </ImageContainer>
           </div>
           <div className="column two">
             <Text>Generación y Almacenamiento</Text>
-            <div>
+            <ImageContainer>
               <Image src={image1} alt={"title"} />
-            </div>
+            </ImageContainer>
             <div className="flex-images">
-              <Image src={image1} alt={"title"} />
-              <Image src={image1} alt={"title"} />
+              <ImageContainer>
+                <Image src={image1} alt={"title"} />
+              </ImageContainer>
+              <ImageContainer>
+                <Image src={image1} alt={"title"} />
+              </ImageContainer>
             </div>
           </div>
           <div className="column three">
             <Text>Generación y Almacenamiento</Text>
-            <div>
+            <ImageContainer>
               <Image src={image1} alt={"title"} />
-            </div>
-            <div>
+            </ImageContainer>
+            <ImageContainer>
               <Image src={image1} alt={"title"} />
-            </div>
+            </ImageContainer>
           </div>
         </Container>
       </Wrapper>
     </Section>
   );
 };
+
+const ImageContainer = styled.div`
+  margin-right: 10px;
+  margin-bottom: 10px;
+`;
 
 const Image = styled.img`
   height: 100%;
@@ -62,6 +70,7 @@ const Section = styled.section`
 `;
 
 const Container = styled.section`
+  box-sizing: border-box;
   height: 70vh;
   display: flex;
   justify-content: space-around;
@@ -69,10 +78,16 @@ const Container = styled.section`
     width: 30%;
     & .flex-images {
       display: flex;
-      & img {
-        width: 50%;
-      }
     }
+  }
+  & .one > div {
+    height: 100%;
+  }
+  & .two > div {
+    height: 50%;
+  }
+  & .three > div {
+    height: 50%;
   }
   @media (max-width: 700px) {
     flex-direction: column;
