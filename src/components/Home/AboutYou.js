@@ -74,7 +74,7 @@ const FormContainer = styled.div`
 const AboutYou = () => {
   return (
     <Wrapper>
-      <AboutYouContainer>
+      <AboutYouContainer id="CONTACTO">
         <aside>
           <h2>
             Pláticanos sobre <br />
