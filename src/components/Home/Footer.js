@@ -85,10 +85,10 @@ const Footer = () => {
   return (
     <Wrapper>
       <FooterContainer>
-        {footerData.map((item) => {
+        {footerData.map((item, key) => {
           if (item.anchor) {
             return (
-              <a href={`mailto:${item.boldText}`}>
+              <a href={`mailto:${item.boldText}`} key={key}>
                 <FooterSection>
                   <img src={item.imgSrc} alt={item.imgAlt} />
                   <span>
@@ -100,7 +100,7 @@ const Footer = () => {
             );
           }
           return (
-            <a target="_blank" href={item.redirect}>
+            <a target="_blank" href={item.redirect} key={key}>
               <FooterSection>
                 <img src={item.imgSrc} alt={item.imgAlt} />
                 <span>

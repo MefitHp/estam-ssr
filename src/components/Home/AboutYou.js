@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Wrapper } from "../shared";
+import emailjs from "emailjs-com";
 
 const AboutYouContainer = styled.section`
   display: grid;
@@ -72,6 +73,35 @@ const FormContainer = styled.div`
   justify-content: flex-end;
 `;
 const AboutYou = () => {
+  const [formData, setFormData] = useState({});
+
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => {
+      if (!value) {
+        const { [name]: erasedKey, ...rest } = prev;
+        return rest;
+      }
+
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs.send("service_6w1ymwt", "template_z2lh59v", formData).then(
+      function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      function (error) {
+        console.log("FAILED...", error);
+      }
+    );
+  };
+
   return (
     <Wrapper>
       <AboutYouContainer id="CONTACTO">
@@ -82,50 +112,63 @@ const AboutYou = () => {
           </h2>
         </aside>
         <FormContainer>
-          <form id="contact-us">
+          <form id="contact-us" onSubmit={handleSubmit}>
             <input
               type="text"
+              name="name"
               className="column"
               placeholder="Nombre:"
+              onChange={handleInput}
               required
             />
             <input
               type="email"
+              name="email"
               className="column"
               placeholder="Email: "
+              onChange={handleInput}
               required
             />
             <input
-              type="company"
+              type="text"
+              name="company"
               className="column"
               placeholder="Empresa: "
+              onChange={handleInput}
               required
             />
             <input
-              type="jobTitle"
+              type="text"
+              name="jobTitle"
               className="column"
               placeholder="Puesto: "
+              onChange={handleInput}
               required
             />
             <select
-              name="Location"
+              name="location"
               className="column"
               placeholder="Ubicación: "
+              onChange={handleInput}
               required
             >
               <StateOptions />
             </select>
             <input
-              type="interests"
+              type="text"
+              name="interests"
               className="column"
               placeholder="¿En que estas interesado? "
+              onChange={handleInput}
               required
             />
             <input
-              style={{ width: "98%" }}
-              type="averageConsumption"
+              style={{ width: "100%" }}
+              name="averageConsumption"
               className="column"
-              placeholder="Promedio de pago de energía mensual "
+              placeholder="Promedio de pago de energía mensual (MXN) "
+              onChange={handleInput}
+              type="number"
               required
             />
           </form>
