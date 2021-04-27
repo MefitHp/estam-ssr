@@ -14,27 +14,6 @@ import {
 import AboutYou from "../components/Home/AboutYou";
 import Footer from "../components/Home/Footer";
 
-const VideoSection = styled.section`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  height: 100vh;
-  padding: 30px;
-  background-color: black;
-  .video {
-    width: 40%;
-    height: 50%;
-    background-color: #fff;
-  }
-  .cuadro {
-    width: 30%;
-    height: 40%;
-    background-color: #009fe3;
-    margin-left: -5%;
-  }
-`;
 
 const HeaderBanner = styled.section`
   min-height: calc(85vh - 70px);

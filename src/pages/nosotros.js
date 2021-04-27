@@ -1,7 +1,7 @@
 import React from "react";
 
-function Nosotros() {
+function Partners() {
   return <div>lol</div>;
 }
 
-export default Nosotros;
+export default Partners;
