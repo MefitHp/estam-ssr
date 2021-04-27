@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import image from "../../images/PROYECTO1.png";
 import { Wrapper } from "../shared";
-import image1 from "../../images/energy_generator.png";
+import image1 from "../../images/PROYECTO1.png";
+import image2 from "../../images/PROYECTO2.png";
+import image3 from "../../images/PROYECTO3.png";
+import image4 from "../../images/PROYECTO4.png";
+import image5 from "../../images/PROYECTO5.png";
+import image6 from "../../images/PROYECTO6.png";
 
 const Projects = () => {
   return (
@@ -20,24 +24,24 @@ const Projects = () => {
           <div className="column two">
             <Text>Generación y Almacenamiento</Text>
             <ImageContainer>
-              <Image src={image1} alt={"title"} />
+              <Image src={image2} alt={"title"} />
             </ImageContainer>
             <div className="flex-images">
               <ImageContainer>
-                <Image src={image1} alt={"title"} />
+                <Image src={image3} alt={"title"} />
               </ImageContainer>
               <ImageContainer>
-                <Image src={image1} alt={"title"} />
+                <Image src={image4} alt={"title"} />
               </ImageContainer>
             </div>
           </div>
           <div className="column three">
             <Text>Generación y Almacenamiento</Text>
             <ImageContainer>
-              <Image src={image1} alt={"title"} />
+              <Image src={image5} alt={"title"} />
             </ImageContainer>
             <ImageContainer>
-              <Image src={image1} alt={"title"} />
+              <Image src={image6} alt={"title"} />
             </ImageContainer>
           </div>
         </Container>
@@ -49,6 +53,9 @@ const Projects = () => {
 const ImageContainer = styled.div`
   margin-right: 10px;
   margin-bottom: 10px;
+  @media (max-width: 700px) {
+    margin: 10px 0;
+  }
 `;
 
 const Image = styled.img`
@@ -65,9 +72,12 @@ const Title = styled.h2`
 `;
 
 const Section = styled.section`
-  padding: 2em;
+  padding-bottom: 60px;
   background: #000;
   color: #fff;
+  @media (max-width: 700px) {
+    padding-bottom: 30px;
+  }
 `;
 
 const Container = styled.section`
@@ -81,24 +91,33 @@ const Container = styled.section`
       display: flex;
     }
   }
-  & .one > div {
-    height: 100%;
+  & .one {
+    width: 50%;
+    & > div {
+      height: 100%;
+    }
   }
-  & .two > div {
-    height: 50%;
+  & .two {
+    width: 25%;
+    & > div {
+      height: 50%;
+    }
   }
-  & .three > div {
-    height: 50%;
+  & .three {
+    width: 25%;
+    & > div {
+      height: 50%;
+    }
   }
   @media (max-width: 700px) {
+    height: auto;
     flex-direction: column;
+    align-items: center;
     & .column {
       width: 100%;
+      margin-bottom: 20px;
       & .flex-images {
-        display: block;
-        img {
-          width: 100%;
-        }
+        flex-direction: column;
       }
     }
   }
