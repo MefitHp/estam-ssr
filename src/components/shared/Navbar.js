@@ -5,7 +5,6 @@ import { Link } from "gatsby";
 import WhiteLogo from "../../images/white_logo.png";
 
 //Local Imports
-import Button from "./Button";
 
 const items = [
   {
@@ -14,11 +13,11 @@ const items = [
   },
   {
     label: "Administración de Energía",
-    path: "#GESTION-DE-ENERGIA",
+    path: "/#GESTION-DE-ENERGIA",
   },
   {
     label: "Nosotros",
-    path: "#NOSOTROS",
+    path: "/#NOSOTROS",
   },
 ];
 
@@ -42,7 +41,7 @@ const Navbar = () => {
         })}
       </LinkList>
       <ListItem className="contact-button">
-        <ContactMenuLink to="#CONTACTO">
+        <ContactMenuLink to="/#CONTACTO">
           Contacto
           <span style={{ fontSize: 12, paddingLeft: 6 }}> ▶</span>
         </ContactMenuLink>
@@ -60,12 +59,13 @@ const Navbar = () => {
         {items.map(({ label, path }, index) => {
           return (
             <ListItem key={index}>
-              <MenuLink key={index} to={path}>
-                {label}
-              </MenuLink>
+              <MenuLink to={path}>{label}</MenuLink>
             </ListItem>
           );
         })}
+        <ListItem>
+          <MenuLink to="/#CONTACTO">Contacto</MenuLink>
+        </ListItem>
       </ResponsiveLinkList>
     </HeaderContainer>
   );

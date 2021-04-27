@@ -100,7 +100,7 @@ const Footer = () => {
             );
           }
           return (
-            <a target="_blank" href={item.redirect} key={key}>
+            <a target="_blank" rel="noreferrer" href={item.redirect} key={key}>
               <FooterSection>
                 <img src={item.imgSrc} alt={item.imgAlt} />
                 <span>
@@ -112,14 +112,22 @@ const Footer = () => {
           );
         })}
         <SocialNetContainer>
-          <a target="_blank" href=" https://www.facebook.com/estamenergia">
+          <a
+            target="_blank"
+            rel="noreferrer "
+            href=" https://www.facebook.com/estamenergia"
+          >
             <img
               src={facebook}
               alt="Facebook"
               placeholder="Visítanos en Facebook"
             />
           </a>
-          <a target="_blank" href="https://www.linkedin.com/company/estam-mx">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/company/estam-mx"
+          >
             <img
               src={linkedin}
               alt="LinkedIn"

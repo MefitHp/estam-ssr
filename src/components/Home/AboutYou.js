@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import { Wrapper } from "../shared";
 import emailjs from "emailjs-com";
@@ -71,12 +72,36 @@ const FormContainer = styled.div`
   flex-direction: column;
   gap: 12px;
   justify-content: flex-end;
+  a {
+    color: var(--blue);
+  }
+`;
+
+const CheckContainer = styled.fieldset`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  input {
+    margin: 0 8px;
+  }
 `;
 const AboutYou = () => {
   const [formData, setFormData] = useState({});
 
   const handleInput = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    if (type === "checkbox") {
+      return setFormData((prev) => {
+        if (!checked) {
+          const { [name]: erasedKey, ...rest } = prev;
+          return rest;
+        }
+        return {
+          ...prev,
+          [name]: value,
+        };
+      });
+    }
     setFormData((prev) => {
       if (!value) {
         const { [name]: erasedKey, ...rest } = prev;
@@ -92,14 +117,26 @@ const AboutYou = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.send("service_6w1ymwt", "template_z2lh59v", formData).then(
-      function (response) {
-        console.log("SUCCESS!", response.status, response.text);
-      },
-      function (error) {
-        console.log("FAILED...", error);
-      }
-    );
+    if (!formData.privacy)
+      return alert("Tienes que aceptar la Política de Privacidad");
+
+    emailjs
+      .send(
+        process.env.EMAILJS_SERVICEID,
+        process.env.EMAILJS_DEFAULT_TEMPLATE,
+        formData
+      )
+      .then(
+        function () {
+          alert("Recibimos tu información, te contactaremos pronto.");
+          e.target.reset();
+        },
+        function () {
+          alert(
+            "¡Algo salió mal! :( Intenta de nuevo o envíanos un correo a: contacto@estam.mx"
+          );
+        }
+      );
   };
 
   return (
@@ -107,8 +144,8 @@ const AboutYou = () => {
       <AboutYouContainer id="CONTACTO">
         <aside>
           <h2>
-            Pláticanos sobre <br />
-            tu proyecto
+            ¡Tengamos un <br />
+            primer contacto!
           </h2>
         </aside>
         <FormContainer>
@@ -152,16 +189,24 @@ const AboutYou = () => {
               onChange={handleInput}
               required
             >
+              <option value="" disabled selected>
+                Ubicación
+              </option>
               <StateOptions />
             </select>
-            <input
+            <select
               type="text"
               name="interests"
               className="column"
-              placeholder="¿En que estas interesado? "
+              placeholder="¿En que estas interesado?"
               onChange={handleInput}
               required
-            />
+            >
+              <option value="" disabled selected>
+                ¿En que estás interesado?
+              </option>
+              <InterestsOptions />
+            </select>
             <input
               style={{ width: "100%" }}
               name="averageConsumption"
@@ -171,6 +216,50 @@ const AboutYou = () => {
               type="number"
               required
             />
+            <div className="column" />
+            <fieldset style={{ width: "100%" }}>
+              <CheckContainer>
+                <input
+                  type="checkbox"
+                  onChange={handleInput}
+                  id="subscribe"
+                  name="subscribe"
+                  value="Acepto recibir información comercial de ESTAM"
+                />
+                <label for="subscribe">
+                  Acepto recibir información comercial de ESTAM
+                </label>
+              </CheckContainer>
+              <CheckContainer>
+                <input
+                  type="checkbox"
+                  onChange={handleInput}
+                  id="privacy"
+                  name="privacy"
+                  value="Acepto"
+                />
+                <label for="privacy" required>
+                  He leido y acepto la{" "}
+                  <Link to="/politica-de-privacidad">
+                    Política de Privacidad
+                  </Link>
+                </label>
+              </CheckContainer>
+              <CheckContainer>
+                <input
+                  type="checkbox"
+                  onChange={handleInput}
+                  id="marketing"
+                  name="marketing"
+                  value="Doy mi consentimiento a Enel X para el tratamiento de mis
+                  datos personales con fines de marketing"
+                />
+                <label for="marketing">
+                  Doy mi consentimiento a Enel X para el tratamiento de mis
+                  datos personales con fines de marketing
+                </label>
+              </CheckContainer>
+            </fieldset>
           </form>
           <button className="send" type="submit" form="contact-us">
             Enviar <span style={{ fontSize: 12, paddingLeft: 6 }}> ▶</span>
@@ -184,7 +273,6 @@ const AboutYou = () => {
 const StateOptions = () => {
   return (
     <>
-      <option value="no">Seleccione uno...</option>
       <option value="Aguascalientes">Aguascalientes</option>
       <option value="Baja California">Baja California</option>
       <option value="Baja California Sur">Baja California Sur</option>
@@ -217,6 +305,22 @@ const StateOptions = () => {
       <option value="Veracruz">Veracruz</option>
       <option value="Yucatán">Yucatán</option>
       <option value="Zacatecas">Zacatecas</option>
+    </>
+  );
+};
+
+const InterestsOptions = () => {
+  return (
+    <>
+      <option value="Generacion/Almacenamiento">
+        Generación/Almacenamiento
+      </option>
+      <option value="Codigo de Red">Código de Red</option>
+      <option value="Software de Administracion de Energia">
+        Software de Administración de Energía
+      </option>
+      <option value="SGEn">SGEn</option>
+      <option value="MEM">MEM</option>
     </>
   );
 };
