@@ -41,7 +41,7 @@ const Navbar = () => {
         })}
       </LinkList>
       <ListItem className="contact-button">
-        <ContactMenuLink to="/#CONTACTO">
+        <ContactMenuLink to="/partners">
           Contacto
           <span style={{ fontSize: 12, paddingLeft: 6 }}> ▶</span>
         </ContactMenuLink>
@@ -64,7 +64,7 @@ const Navbar = () => {
           );
         })}
         <ListItem>
-          <MenuLink to="/#CONTACTO">Contacto</MenuLink>
+          <MenuLink to="/partners">Contacto</MenuLink>
         </ListItem>
       </ResponsiveLinkList>
     </HeaderContainer>

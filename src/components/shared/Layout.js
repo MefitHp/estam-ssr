@@ -30,7 +30,6 @@ const globalStyles = `
 
   body {
     font-family: "Oswald", "Oswald Bold", georgia, serif;
-    overflow-y: scroll;
   }
   
   html {

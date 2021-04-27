@@ -240,9 +240,13 @@ const AboutYou = () => {
                 />
                 <label for="privacy" required>
                   He leido y acepto la{" "}
-                  <Link to="/politica-de-privacidad">
+                  <a
+                    to="/politica-de-privacidad"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Política de Privacidad
-                  </Link>
+                  </a>
                 </label>
               </CheckContainer>
               <CheckContainer>
