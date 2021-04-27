@@ -44,7 +44,7 @@ function Nosotros() {
 }
 
 const Section = styled.div`
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,6 +71,11 @@ const BannerTitle = styled.h2`
     line-height: 1;
     b {
       font-family: "Oswald Bold";
+    }
+  }
+  @media (max-width: 700px) {
+    span {
+      font-size: calc(2.5em + 1vw);
     }
   }
 `;
