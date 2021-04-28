@@ -16,12 +16,14 @@ function Nosotros() {
                 <BannerTitleContainer>
                   <BannerTitle>
                     <span>
-                      Quieres saber más
+                      ¿Quíeres saber más
                       <br /> acerca de nosotros?
                     </span>
                   </BannerTitle>
                   <BannerTitle>
-                    <span>Descarga nuestro portafolio</span>
+                    <span className="subtitle">
+                      Descarga nuestro portafolio
+                    </span>
                   </BannerTitle>
                   <BannerButtons>
                     <Button>Español</Button>
@@ -30,7 +32,7 @@ function Nosotros() {
                 </BannerTitleContainer>
                 <BannerTitleContainer>
                   <BannerTitle>
-                    <span>Ya eres socio?</span>
+                    <span>¿Ya eres socio?</span>
                   </BannerTitle>
                   <BannerButtons>
                     <Button>Accede al Drive para ti</Button>
@@ -75,9 +77,14 @@ const BannerTitle = styled.h2`
   color: white;
   font-weight: light;
   padding: 20px;
+  .subtitle {
+    font-family: "Hartwell Light";
+    font-size: calc(0.7em + 1vw);
+  }
   span {
     font-size: calc(3.5em + 1vw);
     line-height: 1;
+    font-family: "Oswald ExtraLight";
     b {
       font-family: "Oswald Regular";
     }

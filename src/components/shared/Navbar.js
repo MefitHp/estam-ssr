@@ -88,8 +88,8 @@ const MenuButton = styled.button`
   }
 `;
 
-const ResponsiveLinkList = styled.div`
-  background-color: black;
+const ResponsiveLinkList = styled.ul`
+  background-color: rgba(0, 0, 0, 0.43);
   width: 100%;
   display: flex;
   align-items: center;
