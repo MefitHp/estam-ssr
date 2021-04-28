@@ -66,7 +66,7 @@ const ReadMoreContainer = styled.section`
   }
   .text {
     position: absolute;
-
+    padding: 1.5em 3rem;
     color: white;
     background: black;
     width: auto;
