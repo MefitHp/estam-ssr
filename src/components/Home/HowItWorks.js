@@ -10,7 +10,7 @@ const HowItWorks = () => {
     <Section id="NOSOTROS">
       <Wrapper>
         <Container isFirst>
-          <Image src={WhyImage} isFirst />
+          <Image src={WhyImage} alt="why" isFirst />
           <Text>
             <h2>¿Por qué?</h2>
             <p>
@@ -28,7 +28,7 @@ const HowItWorks = () => {
           </Text>
         </Container>
         <Container>
-          <Image2 src={HowImage} />
+          <Image2 src={HowImage} alt="how" />
           <Text>
             <h2>¿Cómo funcionamos?</h2>
             <p>

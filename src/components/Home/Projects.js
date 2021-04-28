@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 
 import { Wrapper } from "../shared";
-import image1 from "../../images/PROYECTO1.png";
+import image1 from "../../images/GENERATION.webp";
 import image2 from "../../images/PROYECTO2.png";
 import image3 from "../../images/PROYECTO3.png";
 import image4 from "../../images/PROYECTO4.png";
-import image5 from "../../images/PROYECTO5.png";
-import image6 from "../../images/PROYECTO6.png";
+import image5 from "../../images/MEM1.webp";
+import image6 from "../../images/MEM2.webp";
 
 const Projects = () => {
   const [currentPicture, setCurrentPicture] = useState(null);
@@ -78,7 +78,7 @@ const Projects = () => {
       {currentPicture && (
         <Overlay>
           <CloseIcon onClick={closeModal}>X</CloseIcon>
-          <BigImage src={currentPicture} alt={"CurrentPicture"} />
+          <BigImage src={currentPicture} />
         </Overlay>
       )}
     </Section>
@@ -117,7 +117,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   height: 100%;
   width: 100%;
-  cursor: pointer;
+  cursor: pointe;
 `;
 
 const BigImage = styled.div`

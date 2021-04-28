@@ -5,6 +5,7 @@ module.exports = {
   siteMetadata: {
     title: "ESTAM",
     description: "Energía Inteligente",
+    siteUrl: "http://estam.netlify.app",
   },
   plugins: [
     "gatsby-plugin-emotion",
