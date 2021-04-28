@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, SEO } from "../";
 import { Global, css } from "@emotion/react";
-import "../../../fonts/Layout.css";
+import "../../../fonts/layout.css";
 
 const globalStyles = `
   html {
