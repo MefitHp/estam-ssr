@@ -10,6 +10,7 @@ import {
   HowItWorks,
   Projects,
   Importance,
+  Abilities,
 } from "../components/Home";
 import AboutYou from "../components/Home/AboutYou";
 import Footer from "../components/Home/Footer";
@@ -98,10 +99,10 @@ const IndexPage = () => {
       <AboutYou />
       {/* Primera sección */}
       <ReadMore />
-
       <InfoCards />
       <HowItWorks />
       <Projects />
+      <Abilities />
       <BackgroundImageFluid>
         <Importance />
         <Footer />
