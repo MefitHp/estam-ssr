@@ -44,7 +44,7 @@ const ReadMore = () => {
         >
           <RenewableEnergyBackground className="fluid-background">
             <div className="text">
-              <h2>
+              <h2 className="oswald-extralight">
                 Mantente informado <br /> sobre el sector <br /> energético...
               </h2>
               <Button>Leer más</Button>
@@ -66,11 +66,14 @@ const ReadMoreContainer = styled.section`
   }
   .text {
     position: absolute;
-    padding: 2.5em;
+
     color: white;
     background: black;
     width: auto;
     right: 0;
+    @media (max-width: 700px) {
+      padding: 1.5em;
+    }
   }
   h2 {
     font-size: calc(1.7em + 1vw);
@@ -82,8 +85,9 @@ const ReadMoreContainer = styled.section`
     }
   }
   button {
+    font-family: "Oswald ExtraLight";
     text-transform: uppercase;
-    font-size: calc(0.2em + 1vw);
+    font-size: calc(0.5em + 1vw);
     padding: 12px 24px;
   }
 `;

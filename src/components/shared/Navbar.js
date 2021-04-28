@@ -59,12 +59,16 @@ const Navbar = () => {
         {items.map(({ label, path }, index) => {
           return (
             <ListItem key={index}>
-              <MenuLink to={path}>{label}</MenuLink>
+              <MenuLink to={path} onClick={() => setMenuOpen(false)}>
+                {label}
+              </MenuLink>
             </ListItem>
           );
         })}
         <ListItem>
-          <MenuLink to="/partners">Contacto</MenuLink>
+          <MenuLink to="/partners" onClick={() => setMenuOpen(false)}>
+            Contacto
+          </MenuLink>
         </ListItem>
       </ResponsiveLinkList>
     </HeaderContainer>
@@ -109,7 +113,6 @@ const ResponsiveLinkList = styled.div`
 const HeaderContainer = styled.nav`
   ${tw`
   flex
-  bg-black
   shadow-md
   px-5
   py-2
@@ -117,10 +120,20 @@ const HeaderContainer = styled.nav`
   justify-between
   lg:px-20
   `}
-  position: relative;
+  position: absolute;
+  top: 45px;
+  z-index: 10;
+  max-width: 1280px;
+  width: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  font-family: "Hartwell Regular";
   color: black;
   .contact-button {
-    width: 150px;
+    width: 200px;
     font-size: 16px;
     align-items: center;
     display: flex;

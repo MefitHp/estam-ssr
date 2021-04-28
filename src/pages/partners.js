@@ -8,41 +8,48 @@ import { Button, Wrapper } from "../components/shared";
 function Nosotros() {
   return (
     <>
-      <HeaderBanner id="#">
+      <HeaderBanner>
         <BackgroundImageFluid>
-          <Wrapper>
-            <Section>
-              <BannerTitleContainer>
-                <BannerTitle>
-                  <span>
-                    Quieres saber más
-                    <br /> acerca de nosotros?
-                  </span>
-                </BannerTitle>
-                <BannerTitle>
-                  <span>Descarga nuestro portafolio</span>
-                </BannerTitle>
-                <BannerButtons>
-                  <Button>Español</Button>
-                  <Button>English</Button>
-                </BannerButtons>
-              </BannerTitleContainer>
-              <BannerTitleContainer>
-                <BannerTitle>
-                  <span>Ya eres socio?</span>
-                </BannerTitle>
-                <BannerButtons>
-                  <Button>Accede al Drive para ti</Button>
-                </BannerButtons>
-              </BannerTitleContainer>
-            </Section>
-          </Wrapper>
+          <Mask>
+            <Wrapper>
+              <Section>
+                <BannerTitleContainer>
+                  <BannerTitle>
+                    <span>
+                      Quieres saber más
+                      <br /> acerca de nosotros?
+                    </span>
+                  </BannerTitle>
+                  <BannerTitle>
+                    <span>Descarga nuestro portafolio</span>
+                  </BannerTitle>
+                  <BannerButtons>
+                    <Button>Español</Button>
+                    <Button>English</Button>
+                  </BannerButtons>
+                </BannerTitleContainer>
+                <BannerTitleContainer>
+                  <BannerTitle>
+                    <span>Ya eres socio?</span>
+                  </BannerTitle>
+                  <BannerButtons>
+                    <Button>Accede al Drive para ti</Button>
+                  </BannerButtons>
+                </BannerTitleContainer>
+              </Section>
+            </Wrapper>
+          </Mask>
         </BackgroundImageFluid>
       </HeaderBanner>
     </>
   );
 }
 
+const Mask = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.33);
+`;
 const Section = styled.div`
   min-height: calc(100vh - 80px);
   display: flex;
@@ -52,8 +59,10 @@ const Section = styled.div`
 `;
 
 const HeaderBanner = styled.section`
-  min-height: calc(85vh - 70px);
-  background-color: goldenrod;
+  min-height: 100vh;
+  section {
+    min-height: 100vh;
+  }
 `;
 
 const BannerTitleContainer = styled.div`
@@ -70,7 +79,7 @@ const BannerTitle = styled.h2`
     font-size: calc(3.5em + 1vw);
     line-height: 1;
     b {
-      font-family: "Oswald Bold";
+      font-family: "Oswald Regular";
     }
   }
   @media (max-width: 700px) {
@@ -85,6 +94,8 @@ const BannerButtons = styled.div`
   justify-content: center;
   & button {
     margin: 10px;
+
+    padding: 12px 22px !important;
   }
 `;
 // markup

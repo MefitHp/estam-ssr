@@ -106,14 +106,16 @@ const Card = styled.div`
     }
   }
   .card-title {
+    font-family: "Oswald Regular";
     height: 40px;
     text-align: center;
     line-height: normal;
-    font-weight: 600;
+    font-size: 1.2rem;
   }
   .card-text {
+    font-family: "Hartwell Light";
     height: 40%;
-    font-size: 0.8rem;
+    font-size: 1rem;
     align-items: flex-start;
     text-align: center;
   }

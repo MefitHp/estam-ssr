@@ -27,5 +27,12 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `fonts`,
+        path: `${__dirname}/src/fonts`,
+      },
+    },
   ],
 };

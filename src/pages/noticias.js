@@ -4,7 +4,8 @@ import { Wrapper } from "../components/shared";
 
 const NewsContainer = styled.section`
   width: 100%;
-  height: calc(100vh - 80px);
+  min-height: 100vh;
+  padding-top: 100px;
   color: white;
   background-color: black;
 

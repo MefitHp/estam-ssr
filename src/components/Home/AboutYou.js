@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import { Wrapper } from "../shared";
 import emailjs from "emailjs-com";
@@ -10,7 +9,7 @@ const AboutYouContainer = styled.section`
   padding: 4rem;
   gap: 16px;
   h2 {
-    font-family: "Oswald";
+    font-family: "Oswald Regular";
     color: var(--blue);
     font-size: calc(2.5em + 1vw);
     line-height: 1;
@@ -20,7 +19,8 @@ const AboutYouContainer = styled.section`
     }
   }
   .send {
-    width: 70px;
+    padding: 4px 12px;
+    width: 100px;
     color: var(--blue);
   }
   form {
@@ -54,7 +54,10 @@ const AboutYouContainer = styled.section`
       flex-direction: column;
     }
   }
-
+  .centered {
+    display: flex;
+    align-items: center;
+  }
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
     padding: 2rem;
@@ -142,14 +145,18 @@ const AboutYou = () => {
   return (
     <Wrapper>
       <AboutYouContainer id="CONTACTO">
-        <aside>
-          <h2>
+        <aside className="centered">
+          <h2 className="oswald-regular">
             ¡Tengamos un <br />
             primer contacto!
           </h2>
         </aside>
         <FormContainer>
-          <form id="contact-us" onSubmit={handleSubmit}>
+          <form
+            id="contact-us"
+            className="hartwell-regular"
+            onSubmit={handleSubmit}
+          >
             <input
               type="text"
               name="name"
@@ -186,10 +193,11 @@ const AboutYou = () => {
               name="location"
               className="column"
               placeholder="Ubicación: "
-              onChange={handleInput}
+              onBlur={handleInput}
               required
+              defaultValue=""
             >
-              <option value="" disabled selected>
+              <option value="" disabled>
                 Ubicación
               </option>
               <StateOptions />
@@ -199,16 +207,17 @@ const AboutYou = () => {
               name="interests"
               className="column"
               placeholder="¿En que estas interesado?"
-              onChange={handleInput}
+              onBlur={handleInput}
               required
+              defaultValue=""
             >
-              <option value="" disabled selected>
+              <option value="" disabled>
                 ¿En que estás interesado?
               </option>
               <InterestsOptions />
             </select>
             <input
-              style={{ width: "100%" }}
+              style={{ width: "100%", flex: "1 1 100%" }}
               name="averageConsumption"
               className="column"
               placeholder="Promedio de pago de energía mensual (MXN) "
@@ -226,7 +235,7 @@ const AboutYou = () => {
                   name="subscribe"
                   value="Acepto recibir información comercial de ESTAM"
                 />
-                <label for="subscribe">
+                <label htmlFor="subscribe">
                   Acepto recibir información comercial de ESTAM
                 </label>
               </CheckContainer>
@@ -238,10 +247,10 @@ const AboutYou = () => {
                   name="privacy"
                   value="Acepto"
                 />
-                <label for="privacy" required>
+                <label htmlFor="privacy" required>
                   He leido y acepto la{" "}
                   <a
-                    to="/politica-de-privacidad"
+                    href="/politica-de-privacidad"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -258,7 +267,7 @@ const AboutYou = () => {
                   value="Doy mi consentimiento a Enel X para el tratamiento de mis
                   datos personales con fines de marketing"
                 />
-                <label for="marketing">
+                <label htmlFor="marketing">
                   Doy mi consentimiento a Enel X para el tratamiento de mis
                   datos personales con fines de marketing
                 </label>

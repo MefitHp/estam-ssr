@@ -8,21 +8,23 @@ const PrivacyPolicyContainer = styled.div`
   background-color: black;
   display: flex;
   flex-direction: column;
+  padding-top: 100px;
 
   h1 {
     color: white;
-    font-size: calc(3em + 1vw);
+    font-size: calc(2.5em + 1vw);
+    font-family: "Oswald Regular";
   }
   .privacy-policy {
     p.p1 {
       margin: 0px 0px 0px 0px;
-      font: 12px "Times New Roman";
+      font: 12px "Oswald Regular";
       color: #000000;
     }
 
     p.p2 {
       margin: 0px 0px 0px 0px;
-      font: 12px "Times New Roman";
+      font: 12px "Oswald Regular";
       color: #000000;
       min-height: 15px;
     }
@@ -30,21 +32,21 @@ const PrivacyPolicyContainer = styled.div`
     p.p3 {
       margin: 0px 0px 0px 0px;
       line-height: 48.8px;
-      font: 52.5px Helvetica;
+      font: 52.5px "Oswald Regular";
       color: #ffffff;
     }
 
     p.p4 {
       margin: 0px 0px 0px 0px;
       line-height: 22.5px;
-      font: 15px Helvetica;
+      font: 15px "Oswald Regular";
       color: var(---blue);
     }
 
     p.p5 {
       margin: 0px 0px 0px 0px;
       line-height: 22.5px;
-      font: 15px Helvetica;
+      font: 15px "Oswald Regular";
       color: var(--blue);
 
       min-height: 18px;
@@ -52,13 +54,13 @@ const PrivacyPolicyContainer = styled.div`
 
     p.p6 {
       margin: 0px 0px 0px 0px;
-      font: 15px "Times New Roman";
+      font: 15px "Oswald Regular";
       color: #000000;
     }
 
     p.p7 {
       margin: 0px 0px 0px 0px;
-      font: 15px "Times New Roman";
+      font: 15px "Oswald Regular";
       color: #000000;
       min-height: 17px;
     }
@@ -66,21 +68,21 @@ const PrivacyPolicyContainer = styled.div`
     p.p9 {
       margin: 0px 0px 5px 0px;
       line-height: 18.8px;
-      font: 13.5px Helvetica;
+      font: 13.5px "Hartwell Light";
       color: var(--blue);
     }
 
     p.p10 {
       margin: 0px 0px 0px 0px;
       line-height: 18.8px;
-      font: 11.5px Helvetica;
+      font: 11.5px "Oswald Regular";
       color: var(--blue);
     }
 
     li.li8 {
       margin: 0px 0px 0px 0px;
       line-height: 24.8px;
-      font: 15px Helvetica;
+      font: 15px "Oswald Regular";
       color: var(--blue);
     }
 
@@ -89,7 +91,7 @@ const PrivacyPolicyContainer = styled.div`
     }
 
     span.s2 {
-      font: 15px Helvetica;
+      font: 15px "Oswald Regular";
       letter-spacing: 0.4px;
       color: var(--blue);
     }
@@ -103,7 +105,7 @@ const PrivacyPolicyContainer = styled.div`
     }
 
     span.s5 {
-      font: 15px Helvetica;
+      font: 15px "Oswald Regular";
       text-decoration: underline;
       letter-spacing: 0.4px;
       color: #0000ff;
@@ -249,7 +251,7 @@ const PrivacyPolicyContainer = styled.div`
       list-style-type: disc;
     }
     p {
-      font-size: 18px !important;
+      font-size: 16px !important;
       color: var(--blue) !important;
       span {
         color: white !important;

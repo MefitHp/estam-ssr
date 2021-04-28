@@ -12,7 +12,7 @@ const HowItWorks = () => {
         <Container isFirst>
           <Image src={WhyImage} isFirst />
           <Text>
-            <h2>Por qué?</h2>
+            <h2>¿Por qué?</h2>
             <p>
               El precio de la electricidad sigue incrementando, los consumidores
               tienen problemas al entenderse con las empresas suministradoras y
@@ -30,7 +30,7 @@ const HowItWorks = () => {
         <Container>
           <Image2 src={HowImage} />
           <Text>
-            <h2>Cómo funcionamos?</h2>
+            <h2>¿Cómo funcionamos?</h2>
             <p>
               En ESTAM contamos con un equipo especializado en la industria
               energética, analizamos sus prácticas actuales de suministro y
@@ -72,9 +72,11 @@ const Text = styled.div`
   padding: 1em 2em;
   width: 60%;
   & h2 {
+    font-family: "Oswald Regular";
     font-size: 2rem;
   }
   & p {
+    font-family: "Hartwell Light";
     margin-bottom: 10px;
     text-align: justify;
   }

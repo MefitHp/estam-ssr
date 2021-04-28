@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Wrapper } from "../shared";
 
 const ImportanceContainer = styled.section`
   max-width: 1280px;
@@ -27,16 +26,19 @@ const ImportanceContainer = styled.section`
     flex-direction: column;
     text-align: right;
     p {
-      font-weight: lighter;
+      font-family: "Hartwell Light";
       position: relative;
       letter-spacing: 2px;
       i {
+        font-family: "Hartwell Medium Italik";
+        font-weight: 700;
         margin-top: 16px;
       }
     }
   }
 
   span::before {
+    font-family: "Oswald Regular";
     position: absolute;
     top: -45px;
     left: -15px;

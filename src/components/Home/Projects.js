@@ -18,30 +18,30 @@ const Projects = () => {
           <div className="column one">
             <Text>Generación y Almacenamiento</Text>
             <ImageContainer>
-              <Image src={image1} alt={"title"} />
+              <Image src={image1} alt={"Paneles Vista Superior"} />
             </ImageContainer>
           </div>
           <div className="column two">
-            <Text>Generación y Almacenamiento</Text>
+            <Text>Código de Red</Text>
             <ImageContainer>
-              <Image src={image2} alt={"title"} />
+              <Image src={image2} alt={"Electricidad"} />
             </ImageContainer>
             <div className="flex-images">
               <ImageContainer>
-                <Image src={image3} alt={"title"} />
+                <Image src={image3} alt={"Electricidad 2"} />
               </ImageContainer>
               <ImageContainer>
-                <Image src={image4} alt={"title"} />
+                <Image src={image4} alt={"Electricidad 3"} />
               </ImageContainer>
             </div>
           </div>
           <div className="column three">
-            <Text>Generación y Almacenamiento</Text>
+            <Text>MEM</Text>
             <ImageContainer>
-              <Image src={image5} alt={"title"} />
+              <Image src={image5} alt={"Panel Solar"} />
             </ImageContainer>
             <ImageContainer>
-              <Image src={image6} alt={"title"} />
+              <Image src={image6} alt={"Panel Solar 2"} />
             </ImageContainer>
           </div>
         </Container>
@@ -64,15 +64,17 @@ const Image = styled.img`
 `;
 
 const Text = styled.h3`
+  font-family: "Hartwell Light";
   font-size: 1rem;
 `;
 
 const Title = styled.h2`
+  font-family: "Oswald Regular";
   font-size: 2rem;
 `;
 
 const Section = styled.section`
-  padding-bottom: 60px;
+  padding: 60px 0px;
   background: #000;
   color: #fff;
   @media (max-width: 700px) {
@@ -82,7 +84,6 @@ const Section = styled.section`
 
 const Container = styled.section`
   box-sizing: border-box;
-  height: 70vh;
   display: flex;
   justify-content: space-around;
   & .column {

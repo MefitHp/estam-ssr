@@ -14,7 +14,6 @@ import {
 import AboutYou from "../components/Home/AboutYou";
 import Footer from "../components/Home/Footer";
 
-
 const HeaderBanner = styled.section`
   min-height: calc(85vh - 70px);
   background-color: goldenrod;
@@ -33,11 +32,8 @@ const BannerTitle = styled.h1`
   font-weight: light;
   padding: 15% 8px;
   span {
-    font-size: calc(3.5em + 1vw);
+    font-size: calc(2.5em + 1vw);
     line-height: 1;
-    b {
-      font-family: "Oswald Bold";
-    }
   }
 `;
 // markup
@@ -81,9 +77,17 @@ const IndexPage = () => {
           <Wrapper>
             <BannerTitleContainer>
               <BannerTitle>
-                <span>
-                  ¡Reduce los costos
-                  <br /> de energía de tu <br /> <b>empresa!</b>
+                <span className="oswald-extralight">
+                  <i>
+                    <b className="oswald-regular">
+                      Somos la única empresa <br />
+                      en México con la solución integral
+                    </b>{" "}
+                    <br />
+                  </i>
+                  desde la generación de enegía <br />
+                  uso eficiente y suministro de <br />
+                  la misma.
                 </span>
               </BannerTitle>
             </BannerTitleContainer>

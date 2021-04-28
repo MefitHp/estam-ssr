@@ -92,8 +92,8 @@ const Footer = () => {
                 <FooterSection>
                   <img src={item.imgSrc} alt={item.imgAlt} />
                   <span>
-                    <p>{item.text}</p>
-                    <b>{item.boldText}</b>
+                    <p className="hartwell-light">{item.text}</p>
+                    <b className="hartwell-semibold">{item.boldText}</b>
                   </span>
                 </FooterSection>
               </a>
@@ -104,8 +104,8 @@ const Footer = () => {
               <FooterSection>
                 <img src={item.imgSrc} alt={item.imgAlt} />
                 <span>
-                  <p>{item.text}</p>
-                  <b>{item.boldText}</b>
+                  <p className="hartwell-light">{item.text}</p>
+                  <b className="hartwell-semibold">{item.boldText}</b>
                 </span>
               </FooterSection>
             </a>
