@@ -8,6 +8,12 @@ module.exports = {
     siteUrl: "http://estam.netlify.app",
   },
   plugins: [
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        url: "https://noticias.estam.uno/graphql",
+      },
+    },
     "gatsby-plugin-emotion",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
