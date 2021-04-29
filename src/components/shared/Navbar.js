@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import tw from "twin.macro";
 import { Link } from "gatsby";
 import WhiteLogo from "../../images/white_logo.png";
+import BurguerIcon from "../../images/burguer-icon.webp";
 
 //Local Imports
 
@@ -52,7 +53,7 @@ const Navbar = () => {
         style={{ color: "white", cursor: "pointer" }}
         onClick={() => setMenuOpen((prev) => !prev)}
       >
-        {menuOpen ? "Cerrar" : "Abrir"}
+        <img src={BurguerIcon} alt="Icono del menú" />
       </MenuButton>
       {/* Shown in mobile */}
       <ResponsiveLinkList isOpen={menuOpen}>
@@ -80,7 +81,6 @@ const MenuButton = styled.button`
   font-size: 1rem;
   padding: 4px;
   color: white;
-  border: 1px solid white;
   width: 60px;
   height: 60px;
   @media (max-width: 700px) {
@@ -131,6 +131,9 @@ const HeaderContainer = styled.nav`
   transform: translate(-50%, -50%);
   background-color: transparent;
   font-family: "Hartwell Regular";
+  @media (max-width: 700px) {
+    background-color: rgba(0, 0, 0, 0.43);
+  }
   color: black;
   .contact-button {
     width: 200px;

@@ -135,7 +135,9 @@ const BigImage = styled.div`
 
 const Text = styled.h3`
   font-family: "Hartwell Light";
-  font-size: 1rem;
+  @media (max-width: 700px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const Title = styled.h2`

@@ -264,12 +264,12 @@ const AboutYou = () => {
                   onChange={handleInput}
                   id="marketing"
                   name="marketing"
-                  value="Doy mi consentimiento a Enel X para el tratamiento de mis
+                  value="Doy mi consentimiento a ESTAM para el tratamiento de mis
                   datos personales con fines de marketing"
                 />
                 <label htmlFor="marketing">
-                  Doy mi consentimiento a Enel X para el tratamiento de mis
-                  datos personales con fines de marketing
+                  Doy mi consentimiento a ESTAM para el tratamiento de mis datos
+                  personales con fines de marketing
                 </label>
               </CheckContainer>
             </fieldset>
