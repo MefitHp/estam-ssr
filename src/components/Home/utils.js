@@ -1,8 +1,8 @@
-import Storage from "../../images/card_icons/GENERACION.png";
-import Net from "../../images/card_icons/CODIGODERED.png";
-import Software from "../../images/card_icons/SOFTWARE.png";
-import SGen from "../../images/card_icons/SGEN.png";
-import MEM from "../../images/card_icons/MEM.png";
+import Storage from "../../images/card_icons/GENERACION.webp";
+import Net from "../../images/card_icons/CODIGODERED.webp";
+import Software from "../../images/card_icons/SOFTWARE.webp";
+import SGen from "../../images/card_icons/SGEN.webp";
+import MEM from "../../images/card_icons/MEM.webp";
 
 export const infoImages = {
   storage: Storage,

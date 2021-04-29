@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import styled from "@emotion/styled";
 
 import { Wrapper } from "../shared";
@@ -11,9 +11,24 @@ import image6 from "../../images/MEM2.webp";
 
 const Projects = () => {
   const [currentPicture, setCurrentPicture] = useState(null);
+
   const closeModal = () => {
     setCurrentPicture(null);
   };
+
+  const escFunction = useCallback((event) => {
+    if (event.keyCode === 27) {
+      closeModal();
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction, false);
+
+    return () => {
+      document.removeEventListener("keydown", escFunction, false);
+    };
+  }, []);
 
   return (
     <Section>
@@ -87,10 +102,14 @@ const Projects = () => {
 
 const CloseIcon = styled.span`
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 40px;
   z-index: 10;
   cursor: pointer;
+  font-weight: bolder;
+  @media (max-width: 700px) {
+    right: 20px;
+  }
 `;
 
 const Overlay = styled.div`
@@ -117,7 +136,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   height: 100%;
   width: 100%;
-  cursor: pointe;
+  cursor: pointer;
 `;
 
 const BigImage = styled.div`

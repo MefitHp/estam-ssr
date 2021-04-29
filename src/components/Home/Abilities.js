@@ -2,11 +2,11 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Wrapper } from "../shared";
 
-import AEE from "../../images/abilities/AEE.png";
-import CEM from "../../images/abilities/CEM.png";
-import ANCE_ECO from "../../images/abilities/ANCE_ECO.png";
-import ANCE_FIRCO from "../../images/abilities/ANCE_FIRCO.png";
-import ISO from "../../images/abilities/ISO.png";
+import AEE from "../../images/abilities/AEE.webp";
+import CEM from "../../images/abilities/CEM.webp";
+import ANCE_ECO from "../../images/abilities/ANCE_ECO.webp";
+import ANCE_FIRCO from "../../images/abilities/ANCE_FIRCO.webp";
+import ISO from "../../images/abilities/ISO.webp";
 
 const Container = styled.section`
   background: black;

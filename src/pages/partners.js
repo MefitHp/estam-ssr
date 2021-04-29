@@ -4,6 +4,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
 import { Button, Wrapper } from "../components/shared";
+import estamSpanish from "../files/ESTAM.pdf";
+import estamEnglish from "../files/ESTAMINGLES.pdf";
 
 function Nosotros() {
   return (
@@ -26,17 +28,27 @@ function Nosotros() {
                     </span>
                   </BannerTitle>
                   <BannerButtons>
-                    <Button>Español</Button>
-                    <Button>English</Button>
+                    <a href={estamSpanish} download>
+                      <Button>Español</Button>
+                    </a>
+                    <a href={estamEnglish} download>
+                      <Button>English</Button>
+                    </a>
                   </BannerButtons>
                 </BannerTitleContainer>
                 <BannerTitleContainer>
                   <BannerTitle>
                     <span>¿Ya eres socio?</span>
                   </BannerTitle>
-                  <BannerButtons>
-                    <Button>Accede al Drive para ti</Button>
-                  </BannerButtons>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://estamenergia-my.sharepoint.com/:f:/r/personal/dguzman_estam_mx/Documents/SOCIOS?csf=1&web=1"
+                  >
+                    <BannerButtons>
+                      <Button>Accede al Drive para ti</Button>
+                    </BannerButtons>
+                  </a>
                 </BannerTitleContainer>
               </Section>
             </Wrapper>
@@ -111,7 +123,7 @@ const BackgroundImageFluid = ({ className, children }) => {
   const data = useStaticQuery(
     graphql`
       query {
-        banner: file(relativePath: { eq: "banner.png" }) {
+        banner: file(relativePath: { eq: "banner.webp" }) {
           childImageSharp {
             fluid(maxWidth: 1200, quality: 90) {
               ...GatsbyImageSharpFluid

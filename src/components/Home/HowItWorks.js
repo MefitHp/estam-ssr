@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Wrapper } from "../shared";
-import WhyImage from "../../images/energy_generator.png";
-import HowImage from "../../images/solar_panel.png";
+import WhyImage from "../../images/energy_generator.webp";
+import HowImage from "../../images/solar_panel.webp";
 
 const HowItWorks = () => {
   return (

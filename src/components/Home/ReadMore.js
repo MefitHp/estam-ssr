@@ -9,7 +9,7 @@ const RenewableEnergyBackground = ({ className, children }) => {
   const data = useStaticQuery(
     graphql`
       query {
-        banner: file(relativePath: { eq: "mantente_informado.png" }) {
+        banner: file(relativePath: { eq: "mantente_informado.webp" }) {
           childImageSharp {
             fluid(maxWidth: 1200, quality: 90) {
               ...GatsbyImageSharpFluid
