@@ -28,7 +28,7 @@ const Projects = () => {
     return () => {
       document.removeEventListener("keydown", escFunction, false);
     };
-  }, []);
+  }, [escFunction]);
 
   return (
     <Section>

@@ -3,8 +3,6 @@ import { graphql, Link } from "gatsby";
 import styled from "@emotion/styled";
 import { Wrapper, SEO } from "../components/shared";
 
-import Blog from "../components/Home/Blog";
-
 const NewsContainer = styled.section`
   width: 100%;
   min-height: 100vh;
