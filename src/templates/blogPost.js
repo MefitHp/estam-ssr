@@ -34,6 +34,7 @@ const Blog = styled.div`
   }
   .wp-block-image {
     position: relative;
+    text-align: center;
   }
   .wp-block-image {
     margin-bottom: 1em;

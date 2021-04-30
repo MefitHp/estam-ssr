@@ -24,7 +24,6 @@ exports.createPages = async ({ graphql, actions }) => {
     let [php, ...newUri] = post.uri.split("/");
 
     const urlPath = `/blog/posts/${newUri.join("/")}`;
-    console.log({ urlPath });
     createPage({
       // will be the url for the page
       path: urlPath,

@@ -41,5 +41,22 @@ module.exports = {
         path: `${__dirname}/src/fonts`,
       },
     },
+    {
+      resolve: "gatsby-plugin-favicons",
+      options: {
+        logo: `${__dirname}/src/images/my-icon.png`,
+        appName: "ESTAM",
+        background: "#fff",
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          yandex: false,
+          windows: false,
+        },
+      },
+    },
   ],
 };
