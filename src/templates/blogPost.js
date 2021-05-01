@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { SEO, Wrapper } from "../components/shared";
 import { graphql } from "gatsby";
+import contentParser from "gatsby-source-wpgraphql-images";
+// import "@wordpress/block-library/build-style/style.css";
 
 const Blog = styled.div`
   padding: 6rem 0px 3rem;
@@ -54,30 +56,59 @@ const Blog = styled.div`
     white-space: pre-wrap;
   }
 `;
-export default function blogPost({ data: { wpPost: post } }) {
-  let { title, content, date } = post;
-  const baseUrl = `https://noticias.estam.uno/wp-content/uploads/${date}`;
-  const regex = /\/static\/[\w]{3,}\/[\w]{3,}/g;
-  const contentWithFixedUrls = content.replace(regex, baseUrl);
+
+const pluginOptions = {
+  wordPressUrl: "https://noticias.estam.uno/",
+  uploadsUrl: "https://noticias.estam.uno/wp-content/uploads/",
+};
+export default function blogPost({ data }) {
+  const {
+    title,
+    contentParsed,
+    contentFiles,
+    featuredImage,
+  } = data.wpgraphql.post;
 
   return (
     <Blog>
       <Wrapper>
-        <SEO title={title} />
+        <SEO title={title} image={featuredImage?.node.link} />
         <h1>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: contentWithFixedUrls }} />
+        <div>
+          {contentParser(
+            { content: contentParsed, files: contentFiles },
+            pluginOptions
+          )}
+        </div>
       </Wrapper>
     </Blog>
   );
 }
 
 export const query = graphql`
-  query($id: String!) {
-    wpPost(id: { eq: $id }) {
-      id
-      title
-      date(formatString: "YYYY/MM")
-      content
+  query($id: ID!) {
+    wpgraphql {
+      post(id: $id) {
+        id
+        uri
+        title
+        content
+        contentParsed
+        featuredImage {
+          node {
+            link
+          }
+        }
+        contentFiles {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+              presentationWidth
+            }
+          }
+        }
+      }
     }
   }
 `;
