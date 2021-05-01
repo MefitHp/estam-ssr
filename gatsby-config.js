@@ -9,8 +9,20 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-source-wordpress",
+      resolve: "gatsby-source-wpgraphql-images",
       options: {
+        wordPressUrl: "https://noticias.estam.uno/",
+        uploadsUrl: "https://noticias.estam.uno/wp-content/uploads/",
+        processPostTypes: ["Post"],
+        graphqlTypeName: "WPGraphQL",
+        generateWebp: true,
+      },
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "WPGraphQL",
+        fieldName: "wpgraphql",
         url: "https://noticias.estam.uno/graphql",
       },
     },

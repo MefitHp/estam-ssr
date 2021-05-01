@@ -86,7 +86,7 @@ const IndexPage = () => {
                     </b>{" "}
                     <br />
                   </i>
-                  desde la generación de enegía <br />
+                  desde la generación de energía <br />
                   uso eficiente y suministro de <br />
                   la misma.
                 </span>

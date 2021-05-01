@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import styled from "@emotion/styled";
 import { Wrapper, SEO } from "../components/shared";
 
@@ -46,33 +46,35 @@ const Layer = styled.div`
   }
 `;
 
-const News = ({ data: { posts } }) => {
-  console.log({ posts });
+const News = ({ data }) => {
+  const { posts } = data.wpgraphql;
+  // const posts = null;
   return (
     <NewsContainer>
       <SEO title={"Noticias"} />
       <Wrapper>
         <h1>Blog</h1>
         <PostContainer>
-          {posts.edges.map(({ node }) => {
-            const {
-              id,
-              title,
-              uri,
-              featuredImage: {
-                node: { link },
-              },
-            } = node;
-            return (
-              <Link to={`/blog/posts${uri}`}>
-                <PostCard key={id} imageUrl={link}>
-                  <Layer>
-                    <p>{title}</p>
-                  </Layer>
-                </PostCard>
-              </Link>
-            );
-          })}
+          {posts &&
+            posts.edges.map(({ node }) => {
+              const {
+                id,
+                title,
+                uri,
+                featuredImage: {
+                  node: { link },
+                },
+              } = node;
+              return (
+                <Link to={`/noticias${uri}`} key={id}>
+                  <PostCard imageUrl={link}>
+                    <Layer>
+                      <p>{title}</p>
+                    </Layer>
+                  </PostCard>
+                </Link>
+              );
+            })}
         </PostContainer>
       </Wrapper>
     </NewsContainer>
@@ -81,15 +83,18 @@ const News = ({ data: { posts } }) => {
 
 export const query = graphql`
   query PostsQuery {
-    posts: allWpPost {
-      edges {
-        node {
-          id
-          title
-          uri
-          featuredImage {
-            node {
-              link
+    wpgraphql {
+      posts(first: 32) {
+        edges {
+          node {
+            id
+            title
+            uri
+            content
+            featuredImage {
+              node {
+                link
+              }
             }
           }
         }
