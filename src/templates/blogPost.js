@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { SEO, Wrapper } from "../components/shared";
 import { graphql } from "gatsby";
 import contentParser from "gatsby-source-wpgraphql-images";
-// import "@wordpress/block-library/build-style/style.css";
 
 const Blog = styled.div`
   padding: 6rem 0px 3rem;

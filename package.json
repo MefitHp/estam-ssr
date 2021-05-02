@@ -19,7 +19,6 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
-    "@wordpress/block-library": "^2.29.3",
     "emailjs-com": "^2.6.4",
     "gatsby": "^3.0.1",
     "gatsby-background-image": "^1.5.0",

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Wrapper } from "../shared";
 import emailjs from "emailjs-com";
+import { navigate } from "gatsby";
 
 const AboutYouContainer = styled.section`
   display: grid;
@@ -89,15 +90,23 @@ const CheckContainer = styled.fieldset`
   }
 `;
 const AboutYou = () => {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    recibir_informacion_comercial:
+      "No Acepto recibir información comercial de ESTAM",
+    politica_de_privacidad: "No Acepto la política de privacidad",
+    tratamiento_de_datos_personales:
+      "No Doy mi consentimiento a ESTAM para el tratamiento de mis datos personales con fines de marketing",
+  });
 
   const handleInput = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
       return setFormData((prev) => {
         if (!checked) {
-          const { [name]: erasedKey, ...rest } = prev;
-          return rest;
+          return {
+            ...prev,
+            [name]: `No ${value}`,
+          };
         }
         return {
           ...prev,
@@ -120,28 +129,35 @@ const AboutYou = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.privacy)
+    if (formData.politica_de_privacidad !== "Acepto la política de privacidad")
       return alert("Tienes que aceptar la Política de Privacidad");
 
+    //Enviar mensaje de contacto
     emailjs
       .send(
-        process.env.EMAILJS_SERVICEID,
-        process.env.EMAILJS_DEFAULT_TEMPLATE,
-        formData
+        "email_default_service",
+        "first_touch",
+        formData,
+        "user_c81DLhnBSYjLRFIR76p0Z"
       )
       .then(
-        function () {
-          alert("Recibimos tu información, te contactaremos pronto.");
-          e.target.reset();
-        },
-        function () {
+        () => navigate("/gracias"),
+        () =>
           alert(
             "¡Algo salió mal! :( Intenta de nuevo o envíanos un correo a: contacto@estam.mx"
-          );
-        }
+          )
       );
-  };
 
+    // Enviar mensaje determinado
+    emailjs
+      .send(
+        "email_default_service",
+        "estam_inicial",
+        formData,
+        "user_c81DLhnBSYjLRFIR76p0Z"
+      )
+      .then(() => navigate("/gracias"));
+  };
   return (
     <Wrapper>
       <AboutYouContainer id="CONTACTO">
@@ -159,7 +175,7 @@ const AboutYou = () => {
           >
             <input
               type="text"
-              name="name"
+              name="nombre"
               className="column"
               placeholder="Nombre:"
               onChange={handleInput}
@@ -183,14 +199,14 @@ const AboutYou = () => {
             />
             <input
               type="text"
-              name="jobTitle"
+              name="puesto"
               className="column"
               placeholder="Puesto: "
               onChange={handleInput}
               required
             />
             <select
-              name="location"
+              name="ubicacion"
               className="column"
               placeholder="Ubicación: "
               onBlur={handleInput}
@@ -204,7 +220,7 @@ const AboutYou = () => {
             </select>
             <select
               type="text"
-              name="interests"
+              name="estoy_interesado_en"
               className="column"
               placeholder="¿En que estas interesado?"
               onBlur={handleInput}
@@ -218,7 +234,8 @@ const AboutYou = () => {
             </select>
             <input
               style={{ width: "100%", flex: "1 1 100%" }}
-              name="averageConsumption"
+              name="consumo_promedio_mensual"
+              min="1"
               className="column"
               placeholder="Promedio de pago de energía mensual (MXN) "
               onChange={handleInput}
@@ -232,7 +249,7 @@ const AboutYou = () => {
                   type="checkbox"
                   onChange={handleInput}
                   id="subscribe"
-                  name="subscribe"
+                  name="recibir_informacion_comercial"
                   value="Acepto recibir información comercial de ESTAM"
                 />
                 <label htmlFor="subscribe">
@@ -244,8 +261,8 @@ const AboutYou = () => {
                   type="checkbox"
                   onChange={handleInput}
                   id="privacy"
-                  name="privacy"
-                  value="Acepto"
+                  name="politica_de_privacidad"
+                  value="Acepto la política de privacidad"
                 />
                 <label htmlFor="privacy" required>
                   He leido y acepto la{" "}
@@ -263,9 +280,8 @@ const AboutYou = () => {
                   type="checkbox"
                   onChange={handleInput}
                   id="marketing"
-                  name="marketing"
-                  value="Doy mi consentimiento a ESTAM para el tratamiento de mis
-                  datos personales con fines de marketing"
+                  name="tratamiento_de_datos_personales"
+                  value="Doy mi consentimiento a ESTAM para el tratamiento de mis datos personales con fines de marketing"
                 />
                 <label htmlFor="marketing">
                   Doy mi consentimiento a ESTAM para el tratamiento de mis datos
@@ -332,8 +348,8 @@ const InterestsOptions = () => {
       <option value="Software de Administracion de Energia">
         Software de Administración de Energía
       </option>
-      <option value="SGEn">SGEn</option>
-      <option value="MEM">MEM</option>
+      <option value="SGEn">Sistema de Gestión de Energía</option>
+      <option value="MEM">Mercado Eléctrico Mayorista</option>
     </>
   );
 };

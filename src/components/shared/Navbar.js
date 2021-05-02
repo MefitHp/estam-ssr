@@ -20,6 +20,10 @@ const items = [
     label: "Nosotros",
     path: "/#NOSOTROS",
   },
+  {
+    label: "Partners",
+    path: "/partners",
+  },
 ];
 
 const Navbar = () => {
@@ -42,7 +46,7 @@ const Navbar = () => {
         })}
       </LinkList>
       <ListItem className="contact-button">
-        <ContactMenuLink to="/partners">
+        <ContactMenuLink to="/#CONTACTO">
           Contacto
           <span style={{ fontSize: 12, paddingLeft: 6 }}> ▶</span>
         </ContactMenuLink>
@@ -67,7 +71,7 @@ const Navbar = () => {
           );
         })}
         <ListItem>
-          <MenuLink to="/partners" onClick={() => setMenuOpen(false)}>
+          <MenuLink to="/#CONTACTO" onClick={() => setMenuOpen(false)}>
             Contacto
           </MenuLink>
         </ListItem>
