@@ -27,7 +27,13 @@ export default function SEO({ children, location, description, title, image }) {
       <meta name="description" content={site.siteMetadata.description} />
       {/* Open Graph */}
       {location && <meta property="og:url" content={location.href} />}
-      <meta property="og:image" content={image || "/logo.svg"} />
+      <meta
+        property="og:image"
+        content={
+          image ||
+          "https://media-exp1.licdn.com/dms/image/C4E0BAQFe_fHSyzotCQ/company-logo_200_200/0/1593220436183?e=2159024400&v=beta&t=A-mKd9-AIuDIXJlEVGtXP2ArgXplMcjBvM6CrUhQ6H0"
+        }
+      />
       <meta property="og:title" content={title} key="ogtitle" />
       <meta
         propery="og:site_name"

@@ -36,6 +36,9 @@ const Blog = styled.div`
   .wp-block-image {
     position: relative;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .wp-block-image {
     margin-bottom: 1em;
@@ -71,7 +74,7 @@ export default function blogPost({ data }) {
   return (
     <Blog>
       <Wrapper>
-        <SEO title={title} image={featuredImage?.node.link} />
+        <SEO title={title} image={featuredImage.node.mediaItemUrl} />
         <h1>{title}</h1>
         <div>
           {contentParser(
@@ -95,7 +98,7 @@ export const query = graphql`
         contentParsed
         featuredImage {
           node {
-            link
+            mediaItemUrl
           }
         }
         contentFiles {
