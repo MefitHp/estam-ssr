@@ -101,7 +101,7 @@ export const query = graphql`
         contentFiles {
           publicURL
           childImageSharp {
-            fluid(maxWidth: 100) {
+            fluid(maxWidth: 700) {
               ...GatsbyImageSharpFluid_withWebp
               presentationWidth
             }
