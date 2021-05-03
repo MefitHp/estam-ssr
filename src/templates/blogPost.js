@@ -39,6 +39,7 @@ const Blog = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
   .wp-block-image {
     margin-bottom: 1em;

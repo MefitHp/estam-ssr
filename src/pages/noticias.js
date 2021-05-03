@@ -46,35 +46,42 @@ const Layer = styled.div`
   }
 `;
 
+const avoidList = [
+  "/index.php/2021/03/25/en-mexico-trabajan-279-centrales-de-energia-limpia/",
+];
+
 const News = ({ data }) => {
   const { posts } = data.wpgraphql;
-  // const posts = null;
+  const filteredPosts = posts.edges.filter(({ node }) => {
+    const { uri } = node;
+    return !avoidList.includes(uri) ? node : null;
+  });
+
   return (
     <NewsContainer>
       <SEO title={"Noticias"} />
       <Wrapper>
         <h1>Blog</h1>
         <PostContainer>
-          {posts &&
-            posts.edges.map(({ node }) => {
-              const {
-                id,
-                title,
-                uri,
-                featuredImage: {
-                  node: { link },
-                },
-              } = node;
-              return (
-                <Link to={`/noticias${uri}`} key={id}>
-                  <PostCard imageUrl={link}>
-                    <Layer>
-                      <p>{title}</p>
-                    </Layer>
-                  </PostCard>
-                </Link>
-              );
-            })}
+          {filteredPosts.map(({ node }) => {
+            const {
+              id,
+              title,
+              uri,
+              featuredImage: {
+                node: { link },
+              },
+            } = node;
+            return (
+              <Link to={`/noticias${uri}`} key={id}>
+                <PostCard imageUrl={link}>
+                  <Layer>
+                    <p>{title}</p>
+                  </Layer>
+                </PostCard>
+              </Link>
+            );
+          })}
         </PostContainer>
       </Wrapper>
     </NewsContainer>
