@@ -36,6 +36,9 @@ const BannerTitle = styled.h1`
     font-size: calc(2.5em + 1vw);
     line-height: 1;
   }
+  @media (max-width: 700px) {
+    font-size: calc(1.5em + 1vw);
+  }
 `;
 // markup
 
