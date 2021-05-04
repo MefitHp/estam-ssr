@@ -1,9 +1,9 @@
 {
-  "name": "estam",
+  "name": "estam-ssr-wordpress",
   "version": "1.0.0",
   "private": true,
-  "description": "ESTAM",
-  "author": "MefitHp/Oswaldinho24k",
+  "description": "estam-ssr-wordpress",
+  "author": "Mefit Hernández",
   "keywords": [
     "gatsby"
   ],
@@ -12,33 +12,33 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
     "emailjs-com": "^2.6.4",
-    "gatsby": "^3.0.1",
+    "gatsby": "^3.3.1",
     "gatsby-background-image": "^1.5.0",
-    "gatsby-plugin-emotion": "^6.1.0",
+    "gatsby-plugin-emotion": "^6.4.0",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
-    "gatsby-plugin-google-analytics": "^3.1.0",
-    "gatsby-plugin-image": "^1.1.1",
-    "gatsby-plugin-react-helmet": "^4.1.0",
-    "gatsby-plugin-sharp": "^3.1.1",
-    "gatsby-source-filesystem": "^3.1.0",
+    "gatsby-plugin-google-analytics": "^3.4.0",
+    "gatsby-plugin-image": "^1.4.0",
+    "gatsby-plugin-react-helmet": "^4.4.0",
+    "gatsby-plugin-sharp": "^3.4.0",
+    "gatsby-source-filesystem": "^3.4.0",
     "gatsby-source-graphql": "^3.4.0",
+    "gatsby-source-wordpress": "^5.4.0",
     "gatsby-source-wpgraphql-images": "^1.1.0",
-    "gatsby-transformer-sharp": "^3.1.0",
+    "gatsby-transformer-sharp": "^3.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "sharp": "^0.28.1",
     "twin.macro": "^2.3.0"
   },
-  "devDependencies": {
+    "devDependencies": {
     "gh-pages": "^3.1.0",
     "tailwindcss": "^2.0.4"
   },
