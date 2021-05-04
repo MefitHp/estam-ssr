@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Seo } from "../";
+import { Navbar, SEO } from "../";
 import { Global, css } from "@emotion/react";
 import "../../../fonts/layout.css";
 
@@ -44,7 +44,7 @@ export const Layout = ({ children }) => {
         `}
       />
       <Navbar />
-      <Seo title={"Inicio"} />
+      <SEO title={"Inicio"} />
       {children}
     </div>
   );
