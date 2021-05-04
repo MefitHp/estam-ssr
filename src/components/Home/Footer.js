@@ -75,8 +75,7 @@ const footerData = [
   {
     imgSrc: whatsapp,
     imgAlt: "Whatsapp",
-    text: "Escríbenos por Whatsapp",
-    boldText: "7712958436",
+    boldText: "Escríbenos por Whatsapp",
     redirect: "https://api.whatsapp.com/send?phone=527712958436",
   },
 ];

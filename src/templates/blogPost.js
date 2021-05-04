@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { SEO, Wrapper } from "../components/shared";
+import { Seo, Wrapper } from "../components/shared";
 import { graphql } from "gatsby";
 import contentParser from "gatsby-source-wpgraphql-images";
 
@@ -75,7 +75,7 @@ export default function blogPost({ data }) {
   return (
     <Blog>
       <Wrapper>
-        <SEO title={title} image={featuredImage.node.mediaItemUrl} />
+        <Seo title={title} image={featuredImage.node.mediaItemUrl} />
         <h1>{title}</h1>
         <div>
           {contentParser(
