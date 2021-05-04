@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { Wrapper } from "../shared";
 
@@ -56,34 +56,90 @@ const SocialNetContainer = styled.div`
   }
 `;
 
-const footerData = [
+const directions = [
   {
-    imgSrc: location,
-    imgAlt: "Ubicación",
-    text: "Campo de tiro #402 Adolfo Lopez Mateos",
-    boldText: "Pachuca de Soto, Hidalgo.",
+    id: 1,
     redirect:
       "https://www.google.com/maps?ll=20.096941,-98.743961&z=15&t=m&hl=es-419&gl=US&mapclient=embed&q=Calle+Campo+de+Tiro+400+Privada+la+Paz+42094+Pachuca+de+Soto,+Hgo.+M%C3%A9xico",
+    text: "Campo de tiro #402 Adolfo Lopez Mateos",
+    boldText: "PACHUCA DE SOTO, HIDALGO.",
   },
   {
-    imgSrc: email,
-    imgAlt: "Email",
-    text: "Envíanos un email",
-    boldText: "contacto@estam.mx",
-    anchor: true,
+    id: 2,
+    redirect: "https://goo.gl/maps/Q3v62ZMpAukh4pk67",
+    text: "Blv. Zacatecas N° 245 piso 3.",
+    boldText: "Aguascalientes, Ags.",
   },
   {
-    imgSrc: whatsapp,
-    imgAlt: "Whatsapp",
-    boldText: "Escríbenos por Whatsapp",
-    redirect: "https://api.whatsapp.com/send?phone=527712958436",
+    id: 3,
+    redirect: "https://goo.gl/maps/7MqEu8WT8jwA4y2F7",
+    text: "Av. Chapultepec N° 1610 Piso 1 Int. 3, Col. Privadas del Pedregal.",
+    boldText: "San Luis Potosi, SLP.",
+  },
+  {
+    id: 4,
+    redirect: "https://goo.gl/maps/ViEC76vMfNRw69128",
+    text:
+      "Av. Armando Birlain Shaffer N° 2001, Central Park Corporativo 1, Piso 5.",
+    boldText: "Querétaro. Qro.",
+  },
+  {
+    id: 5,
+    redirect: "https://goo.gl/maps/kmEtJDvUSKyu6Vf96",
+    text:
+      "Torre nissan, Bulevar Vasco de Quiroga #101-piso 6, Los Gavilanes, 37266;",
+    boldText: "León, Gto.",
   },
 ];
 
 const Footer = () => {
+  const [currentDirection, setCurrentDirection] = useState(directions[0]);
+  const [footerData, setCurrentData] = useState([
+    {
+      imgSrc: location,
+      imgAlt: "Ubicación",
+      ...currentDirection,
+    },
+    {
+      imgSrc: email,
+      imgAlt: "Email",
+      text: "Envíanos un email",
+      boldText: "contacto@estam.mx",
+      anchor: true,
+    },
+    {
+      imgSrc: whatsapp,
+      imgAlt: "Whatsapp",
+      boldText: "Escríbenos por Whatsapp",
+      redirect: "https://api.whatsapp.com/send?phone=527712958436",
+    },
+  ]);
+
+  useEffect(() => {
+    const data = [...footerData];
+    data[0] = { imgSrc: location, imgAlt: "Ubicación", ...currentDirection };
+    setCurrentData(data);
+  }, [currentDirection]);
+
+  const handleChange = (e) => {
+    const direction = directions.find((dir) => dir.id == e.target.value);
+    setCurrentDirection(direction);
+  };
   return (
     <Wrapper>
       <FooterContainer>
+        <select
+          name="address"
+          onBlur={handleChange}
+          onChange={handleChange}
+          defaultValue={currentDirection?.id}
+        >
+          {directions.map(({ id, boldText }, key) => (
+            <option key={key} value={id}>
+              {boldText}
+            </option>
+          ))}
+        </select>
         {footerData.map((item, key) => {
           if (item.anchor) {
             return (
