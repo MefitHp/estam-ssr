@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import styled from "@emotion/styled";
-import { Wrapper, Seo } from "../components/shared";
+import { Wrapper, SEO } from "../components/shared";
 
 const NewsContainer = styled.section`
   width: 100%;
@@ -59,7 +59,7 @@ const News = ({ data }) => {
 
   return (
     <NewsContainer>
-      <Seo title={"Noticias"} />
+      <SEO title={"Noticias"} />
       <Wrapper>
         <h1>Blog</h1>
         <PostContainer>

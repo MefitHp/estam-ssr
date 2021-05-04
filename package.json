@@ -17,7 +17,8 @@
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.3.0",
+    "@emotion/styled": "^11.1.5",
+    "common-tags": "^1.8.0",
     "emailjs-com": "^2.6.4",
     "gatsby": "^3.3.1",
     "gatsby-background-image": "^1.5.0",
@@ -43,6 +44,6 @@
     "tailwindcss": "^2.0.4"
   },
   "resolutions": {
-    "sharp": "0.28.1"
-  }
+    "sharp": "0.27.0"
+it   }
 }
