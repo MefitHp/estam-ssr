@@ -19,6 +19,24 @@ const FooterContainer = styled.section`
     grid-template-columns: 1fr;
   }
   background-color: rgba(0, 0, 0, 0.33);
+
+  .address-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    select {
+      text-transform: uppercase;
+      padding: 4px;
+      background: rgba(0, 0, 0, 0.33);
+      color: white;
+      font-family: "Oswald Regular";
+    }
+  }
+
+  .just-flexing {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 const FooterSection = styled.div`
@@ -58,33 +76,38 @@ const SocialNetContainer = styled.div`
 
 const directions = [
   {
-    id: 1,
+    id: "1",
+    className: "address-container",
     redirect:
       "https://www.google.com/maps?ll=20.096941,-98.743961&z=15&t=m&hl=es-419&gl=US&mapclient=embed&q=Calle+Campo+de+Tiro+400+Privada+la+Paz+42094+Pachuca+de+Soto,+Hgo.+M%C3%A9xico",
     text: "Campo de tiro #402 Adolfo Lopez Mateos",
-    boldText: "PACHUCA DE SOTO, HIDALGO.",
+    boldText: "PACHUCA DE SOTO, HGO.",
   },
   {
-    id: 2,
+    id: "2",
+    className: "address-container",
     redirect: "https://goo.gl/maps/Q3v62ZMpAukh4pk67",
     text: "Blv. Zacatecas N° 245 piso 3.",
     boldText: "Aguascalientes, Ags.",
   },
   {
-    id: 3,
+    id: "3",
+    className: "address-container",
     redirect: "https://goo.gl/maps/7MqEu8WT8jwA4y2F7",
     text: "Av. Chapultepec N° 1610 Piso 1 Int. 3, Col. Privadas del Pedregal.",
     boldText: "San Luis Potosi, SLP.",
   },
   {
-    id: 4,
+    id: "4",
+    className: "address-container",
     redirect: "https://goo.gl/maps/ViEC76vMfNRw69128",
     text:
       "Av. Armando Birlain Shaffer N° 2001, Central Park Corporativo 1, Piso 5.",
     boldText: "Querétaro. Qro.",
   },
   {
-    id: 5,
+    id: "5",
+    className: "address-container",
     redirect: "https://goo.gl/maps/kmEtJDvUSKyu6Vf96",
     text:
       "Torre nissan, Bulevar Vasco de Quiroga #101-piso 6, Los Gavilanes, 37266;",
@@ -119,31 +142,57 @@ const Footer = () => {
     const data = [...footerData];
     data[0] = { imgSrc: location, imgAlt: "Ubicación", ...currentDirection };
     setCurrentData(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentDirection]);
 
   const handleChange = (e) => {
-    const direction = directions.find((dir) => dir.id == e.target.value);
+    const direction = directions.find((dir) => dir.id === e.target.value);
     setCurrentDirection(direction);
   };
   return (
     <Wrapper>
       <FooterContainer>
-        <select
-          name="address"
-          onBlur={handleChange}
-          onChange={handleChange}
-          defaultValue={currentDirection?.id}
-        >
-          {directions.map(({ id, boldText }, key) => (
-            <option key={key} value={id}>
-              {boldText}
-            </option>
-          ))}
-        </select>
         {footerData.map((item, key) => {
           if (item.anchor) {
             return (
-              <a href={`mailto:${item.boldText}`} key={key}>
+              <div className="just-flexing">
+                <a href={`mailto:${item.boldText}`} key={key}>
+                  <FooterSection>
+                    <img src={item.imgSrc} alt={item.imgAlt} />
+                    <span>
+                      <p className="hartwell-light">{item.text}</p>
+                      <b className="hartwell-semibold">{item.boldText}</b>
+                    </span>
+                  </FooterSection>
+                </a>
+              </div>
+            );
+          }
+          return (
+            <div className={item.className || "just-flexing"}>
+              {item.className && (
+                <span>
+                  <b>Sucursales: </b>
+                  <select
+                    name="address"
+                    onBlur={handleChange}
+                    onChange={handleChange}
+                    defaultValue={currentDirection?.id}
+                  >
+                    {directions.map(({ id, boldText }, key) => (
+                      <option key={key} value={id}>
+                        {boldText}
+                      </option>
+                    ))}
+                  </select>
+                </span>
+              )}
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={item.redirect}
+                key={key}
+              >
                 <FooterSection>
                   <img src={item.imgSrc} alt={item.imgAlt} />
                   <span>
@@ -152,18 +201,7 @@ const Footer = () => {
                   </span>
                 </FooterSection>
               </a>
-            );
-          }
-          return (
-            <a target="_blank" rel="noreferrer" href={item.redirect} key={key}>
-              <FooterSection>
-                <img src={item.imgSrc} alt={item.imgAlt} />
-                <span>
-                  <p className="hartwell-light">{item.text}</p>
-                  <b className="hartwell-semibold">{item.boldText}</b>
-                </span>
-              </FooterSection>
-            </a>
+            </div>
           );
         })}
         <SocialNetContainer>
