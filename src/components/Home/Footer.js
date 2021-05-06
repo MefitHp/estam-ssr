@@ -110,8 +110,15 @@ const directions = [
     className: "address-container",
     redirect: "https://goo.gl/maps/kmEtJDvUSKyu6Vf96",
     text:
-      "Torre nissan, Bulevar Vasco de Quiroga #101-piso 6, Los Gavilanes, 37266;",
+      "Torre nissan, Bulevar Vasco de Quiroga #101-piso 6, Los Gavilanes, 37266.",
     boldText: "León, Gto.",
+  },
+  {
+    id: "6",
+    className: "address-container",
+    redirect: "https://goo.gl/maps/PDXSEJY6pa1KEorHA",
+    text: "Guillermo Gonzalez Camarena 1560, Zedec Santa Fé.",
+    boldText: "Ciudad de México, CDMX.",
   },
 ];
 
